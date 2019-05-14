@@ -152,10 +152,15 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:////Users/chloemawer/repos/MSIA423-example-pro
 
 ### 3. Create an RDS database:
 Fill in the config/dbconfig file with the following: 
+
 MYSQL_USER=""
+
 MYSQL_PASSWORD=""
+
 MYSQL_HOST=""
+
 MYSQL_PORT=""
+
 DATABASE_NAME=""
 
 Next, source these configurations using
