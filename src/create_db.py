@@ -3,8 +3,17 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 import sqlalchemy as sql
 import logging
+import yaml
 import pandas as pd
 import os
+import sys
+
+with open("config.yml", "r") as f:
+    config = yaml.load(f)
+
+# set up looging config
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+logger = logging.getLogger(__file__)
 
 Base = declarative_base()
 
@@ -23,35 +32,29 @@ class Book_Recommendations(Base):
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover
 
-# the engine_string format
-#engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
-conn_type = "mysql+pymysql"
-user = "root"
-password = "avc_project"
-host = "mysql-avc-app-michel.cmq30xngrjmp.us-east-2.rds.amazonaws.com"
-port = 3306
-DATABASE_NAME = 'msia423'
-engine_string = "{}://{}:{}@{}:{}/{}".\
-format(conn_type, user, password, host, port, DATABASE_NAME)
-#print(engine_string)
-engine = sql.create_engine(engine_string)
-Base.metadata.create_all(engine)
 
-# set up looging config
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-logger = logging.getLogger(__file__)
-# create a db session
-Session = sessionmaker(bind=engine)  
-session = Session()
+def create_db(conn_type, user, password, host, port, DATABASE_NAME):
+    """Creates an RDS database using dbconfig with Book_Recommendations table"""
+    
+    engine_string = "{}://{}:{}@{}:{}/{}".\
+    format(conn_type, user, password, host, port, DATABASE_NAME)
+    logger.info(engine_string)
+    engine = sql.create_engine(engine_string)
+    Base.metadata.create_all(engine)
+    logger.info("Creating RDS database")
 
-# add a book_rec
-book_rec1 = Book_Recommendations(User_Picks="101010", Genre="Fiction", Book_Recommendation="Harry Potter", Book_Cover = "thiswillbeaurl")  
-session.add(book_rec1)
-session.commit()
-logger.info("Database created with book recommendation added: Harry Potter")  
-book_record = session.query(Book_Recommendations.Genre, Book_Recommendations.Book_Recommendation).filter_by(User_Picks="101010").first()
-print(book_record)
-query = "SELECT * FROM Book_Recommendations WHERE Book_Recommendation LIKE '%%Harry%%'"
-df = pd.read_sql(query, con=engine)
-print(df)
-session.close()
+
+def add_to_db(conn_type, user, password, host, port, DATABASE_NAME, user_pick, genre, book_rec, book_cover):
+    
+    engine_string = "{}://{}:{}@{}:{}/{}".\
+    format(conn_type, user, password, host, port, DATABASE_NAME)
+    logger.info(engine_string)
+    engine = sql.create_engine(engine_string)
+    Session = sessionmaker(bind=engine)  
+    session = Session()
+    book_rec =  Book_Recommendations(User_Pick = user_pick, Genre= genre, Book_Recommendation= book_rec, Book_Cover = book_cover)
+    session.add(book_rec)
+    session.commit()
+    logger.info("Added book recommendation to database: " + book_rec)  
+    session.close()
+    
