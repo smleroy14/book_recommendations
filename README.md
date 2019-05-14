@@ -9,9 +9,9 @@
   * [1. Set up environment](#1-set-up-environment)
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
   * [2. Source data from public S3 bucket](#2-source-from-S3)
-  * [3. Initialize the database](#3-initialize-the-database)
-  * [4. Run the application](#4-run-the-application)
-- [Testing](#testing)
+  * [3. Create an RDS Database](#3-initialize-the-database)
+  * [4. Create a sqllite database](#4-run-the-application)
+
 
 <!-- tocstop -->
 
@@ -140,11 +140,6 @@ Create a longer lasting app that will allow users to store their recommendations
 ```
 This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
 
-## Documentation
- 
-* Open up `docs/build/html/index.html` to see Sphinx documentation docs. 
-* See `docs/README.md` for keeping docs up to date with additions to the repository.
-
 ## Running the application 
 ### 1. Set up environment 
 
@@ -155,23 +150,15 @@ The `requirements.txt` file contains the packages required to run the model code
 ```bash
 pip install virtualenv
 
-virtualenv pennylane
+virtualenv book_recs
 
-source pennylane/bin/activate
+source book_recs/bin/activate
 
 pip install -r requirements.txt
 
 ```
-#### With `conda`
 
-```bash
-conda create -n pennylane python=3.7
-conda activate pennylane
-pip install -r requirements.txt
-
-```
-
-### 2. Configure Flask app 
+### 2. Source the data from the public S3 bucket:
 
 `config.py` holds the configurations for the Flask app. It includes the following configurations:
 
@@ -197,30 +184,29 @@ You can also define the absolute path with four `////`:
 SQLALCHEMY_DATABASE_URI = 'sqlite:////Users/chloemawer/repos/MSIA423-example-project-repo-2019/data/tracks.db'
 ```
 
-### 3. Initialize the database 
+### 3. Create an RDS database:
+Fill in the config/dbconfig file with the following: 
+MYSQL_USER=""
+MYSQL_PASSWORD=""
+MYSQL_HOST=""
+MYSQL_PORT=""
+DATABASE_NAME=""
 
-To create the database in the location configured in `config.py` with one initial song, run: 
+Next, source these configurations using
 
-`python run.py create --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+```bash
+echo 'vi config/mysqlconfig' >>	~/.bashrc
+source ~/.bashrc
+```
 
-To add additional songs:
+Finally, to create the RDS database with these configurations, run: 
 
-`python run.py ingest --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+`python src/create_db.py --rds=True`
 
-
-### 4. Run the application 
+### 4. Create a sqllite database:
  
  ```bash
- python app.py 
+ python src/create_db.py --rds=False
  ```
-
-### 5. Interact with the application 
-
-Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the current version of hte app. 
-
-## Testing 
-
-Run `pytest` from the command line in the main project repository. 
-
-
-Tests exist in `test/test_helpers.py`
+ 
+ 
