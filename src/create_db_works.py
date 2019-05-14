@@ -27,7 +27,7 @@ class Book_Recommendations(Base):
 #engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
 conn_type = "mysql+pymysql"
 user = "root"
-password = "avc_project"
+password = ""
 host = "mysql-avc-app-michel.cmq30xngrjmp.us-east-2.rds.amazonaws.com"
 port = 3306
 DATABASE_NAME = 'msia423'
