@@ -16,9 +16,9 @@ class Book_Recommendations(Base):
 
     #User_Picks + Genre will be the composite primary key for the table
     User_Picks = Column(String(50), primary_key=True) #will be a string of 1 and 0 that matches the books that the user picked
-    Genre = Column(String, primary_key =True, unique=False, nullable=False) #The genre that the user picks
-    Book_Recommendation = Column(String, unique=False, nullable = False) #the book recommendation for the user
-    Book_Cover = Column(String, unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    Genre = Column(String(50), primary_key =True, unique=False, nullable=False) #The genre that the user picks
+    Book_Recommendation = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    Book_Cover = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
 
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover
@@ -26,9 +26,9 @@ class Book_Recommendations(Base):
 # the engine_string format
 #engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
 conn_type = "mysql+pymysql"
-user = root
-password = avc_project
-host = mysql-avc-app-michel.cmq30xngrjmp.us-east-2.rds.amazonaws.com
+user = "root"
+password = "avc_project"
+host = "mysql-avc-app-michel.cmq30xngrjmp.us-east-2.rds.amazonaws.com"
 port = 3306
 DATABASE_NAME = 'msia423'
 engine_string = "{}://{}:{}@{}:{}/{}".\
