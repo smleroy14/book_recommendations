@@ -126,29 +126,24 @@ pip install -r requirements.txt
 
 ### 2. Source the data from the public S3 bucket:
 
-`config.py` holds the configurations for the Flask app. It includes the following configurations:
+`src/get_data.py` gets the raw data files from the public S3 bucket 
+
+Run the following command:
 
 ```python
-DEBUG = True  # Keep True for debugging, change to False when moving to production 
-LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
-PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/tracks.db'  # URI for database that contains tracks
-
+python src/get_data.py
 ```
+The data files are now in data/raw_from_s3/
 
-The configuration currently says to save the database to a temporary location as it is just for testing. However, if you are not on your local machine, you may have issues with this location and should change it to a location within your home directory, where you have full permissions. To change it to saving in the data directory within this repository, run the Python code from this directory and change the `config.py` to say:
+To upload these data files to your own S3 bucket, run:
 
 ```python
-SQLALCHEMY_DATABASE_URI = 'sqlite:///../data/tracksB.db'
+python src/load_data_s3.py --local_file="local file name" --bucket="bucket_name" --s3_file='name for file in s3'
 ```
+Run this command separately for each file you would like to upload.
 
-The three `///` denote that it is a relative path to where the code is being run (which is from `src/add_songs.py`). 
+** Note: The user will need to have an AWS bucket along with a key
 
-You can also define the absolute path with four `////`:
-
-```python
-SQLALCHEMY_DATABASE_URI = 'sqlite:////Users/chloemawer/repos/MSIA423-example-project-repo-2019/data/tracks.db'
-```
 
 ### 3. Create an RDS database:
 Fill in the config/dbconfig file with the following: 
