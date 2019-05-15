@@ -101,6 +101,8 @@ Create a longer lasting app that will allow users to store their recommendations
 |
 ├── src                               <- Source data for the project 
 │   ├── create_db.py                  <- Script for creating a (temporary) MySQL database and adding songs to it 
+|   ├── get_data.py                   <- Script for downloading raw kaggle files from a public S3 bucket
+|   ├── load_data_s3.py               <- Script for uploading raw data files to a user's own S3 bucket
 |
 ├── requirements.txt                  <- Python package dependencies 
 ```
@@ -137,7 +139,7 @@ The data files are now in data/raw_from_s3/
 
 To upload these data files to your own S3 bucket, run:
 
-```python
+```bash
 python src/load_data_s3.py --local_file="local file name" --bucket="bucket_name" --s3_file='name for file in s3'
 ```
 Run this command separately for each file you would like to upload.
