@@ -1,4 +1,5 @@
-# Example project repository
+# Book Recommendation App project repository
+# For Mid-Project Review
 
 <!-- toc -->
 
