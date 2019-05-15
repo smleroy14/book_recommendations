@@ -98,6 +98,8 @@ Create a longer lasting app that will allow users to store their recommendations
 │
 ├── data                              <- Folder that contains data used or generated. Only the external/ and sample/ subdirectories are tracked by git. 
 │
+├── deliverables                      <- slide deck for midproject review
+|
 ├── notebooks                         <- Folder that contains notebooks used for EDA and model training that will be developed into scripts later
 |
 ├── src                               <- Source data for the project 
