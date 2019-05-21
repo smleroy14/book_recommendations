@@ -166,7 +166,7 @@ DATABASE_NAME=""
 Next, source these configurations using
 
 ```bash
-echo 'vi config/mysqlconfig' >>	~/.bashrc
+echo 'config/dbconfig' >> ~/.bashrc
 source ~/.bashrc
 ```
 
