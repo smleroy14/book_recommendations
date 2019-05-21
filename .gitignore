@@ -1,2 +1,2 @@
 config/.mysqlconfig
-data/raw_from_s3/*
+data/raw_from_s3/*.csv
