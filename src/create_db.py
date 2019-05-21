@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import argparse
 
-# set up looging config
+# set up logging config
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__file__)
 

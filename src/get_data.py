@@ -5,7 +5,7 @@ import botocore
 from botocore.exceptions import ClientError
 import argparse
 
-# set up loging config
+# set up logging config
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.ERROR)
 logger = logging.getLogger(__file__)
 
