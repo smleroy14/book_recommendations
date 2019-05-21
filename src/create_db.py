@@ -56,7 +56,7 @@ def create_db(RDS):
         engine = sql.create_engine(engine_string)
         Base.metadata.create_all(engine)
     else:
-        SQL_URI = "sqlite:///../data/database.db"
+        SQL_URI = "sqlite:///data/database.db"
         engine_string = SQL_URI
         engine = sql.create_engine(engine_string) 
         Base.metadata.create_all(engine)
