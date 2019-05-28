@@ -8,7 +8,7 @@ import os
 import argparse
 
 # set up logging config
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
 logger = logging.getLogger(__file__)
 
 def str2bool(v):
