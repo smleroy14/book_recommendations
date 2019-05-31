@@ -26,8 +26,6 @@ def get_books_df(csv_dict):
 
     #Remove books with negative tags (Kindle Paperwhite User's Guide, and Kindle User's Guide)
     book_tags_w_names = book_tags_w_names[book_tags_w_names['count'] > 0]
-    print ("book_tags_w_names")
-    print (book_tags_w_names.head())
     return book_tags_w_names
 
 def get_genres(df, genre_dict):
@@ -47,7 +45,7 @@ def get_genres(df, genre_dict):
     df = df.sort_values(['book_id', 'count'], ascending=[True, False])
     books_w_genres = df.groupby('book_id').first().reset_index()
     count = books_w_genres['genre'].value_counts().to_dict()
-    print(count)
+    logger.info(count)
     return books_w_genres
 
 def drop_genre(df, genres_to_drop = []):

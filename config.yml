@@ -27,3 +27,21 @@ gen_features:
 train_model:
   get_combo_df:
     genre_pickle_file: "data/Chick-lit.pkl"
+    num_choices: 20
+    num_picks: 3
+  train_model:
+    neighbors: 30
+    min_neighbors: 5
+    seed: 12345
+  get_top_n:
+    n_start: 17
+    n_end: 22
+  get_recs:
+    path_save_recs: "data/recs/Chick-lit-recs.csv"
+score_model:
+  get_accuracy:
+    genre_pickle: "data/Chick-lit.pkl"
+    neighbors: 30
+    min_neighbors: 5
+    seed: 12345
+    kfolds: 5    
