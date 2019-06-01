@@ -28,18 +28,32 @@ class Book_Recommendations(Base):
     __tablename__ = 'Book_Recommendations'
 
     #User_Picks + Genre will be the composite primary key for the table
-    User_Picks = Column(String(50), primary_key=True) #will be a string of 1 and 0 that matches the books that the user picked
+    user_id = Column(String(50), primary_key=True) #will be a string of 1 and 0 that matches the books that the user picked
     Genre = Column(String(50), primary_key =True, unique=False, nullable=False) #The genre that the user picks
-    Book_Recommendation = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    Book_Cover = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    book_rec1 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    book_cover1 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    book_rec2 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    book_cover2 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    book_rec3 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    book_cover3 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    book_rec4 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    book_cover4 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    book_rec5 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    book_cover5 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
 
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover
 
-def create_db(RDS):
+def create_db(sqllite = True):
     """Create a database in RDS or locally on sql lite based on user preference"""
     
-    if RDS == True:
+    if sqllite = True:
+        SQL_URI = "sqlite:///data/database.db"
+        engine_string = SQL_URI
+        engine = sql.create_engine(engine_string) 
+        Base.metadata.create_all(engine)
+    
+    else:
         #get configurations from .mysqlconfig
         conn_type = "mysql+pymysql"
         user = os.environ.get("MYSQL_USER") 
@@ -55,42 +69,16 @@ def create_db(RDS):
         print(engine_string)
         engine = sql.create_engine(engine_string)
         Base.metadata.create_all(engine)
-    else:
-        SQL_URI = "sqlite:///data/database.db"
-        engine_string = SQL_URI
-        engine = sql.create_engine(engine_string) 
-        Base.metadata.create_all(engine)
+
 
 if __name__ == "__main__":
+    with open("config.yml", "r") as f:
+        config = yaml.load(f)
+    config_try = config['create_db']
+
+    create_db(**config_try['create_db'])
 
     parser = argparse.ArgumentParser(description="Create database")
     parser.add_argument('--rds', default=True, type=str2bool, help='True to create RDS database, False creates sqllite database')
     args = parser.parse_args()
     create_db(args.rds)
-
-
-def add_to_RDS_db(user_pick, genre, book_rec, book_cover):
-
-    #get configurations from .mysqlconfig
-    conn_type = "mysql+pymysql"
-    user = os.environ.get("MYSQL_USER") 
-    password =  os.environ.get("MYSQL_PASSWORD")
-    host = os.environ.get("MYSQL_HOST") 
-    port = os.environ.get("MYSQL_PORT")
-    DATABASE_NAME = os.environ.get("DATABASE_NAME")
-    
-    format(conn_type, user, password, host, port, DATABASE_NAME)
-    # the engine_string format
-    #engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
-    engine_string = "{}://{}:{}@{}:{}/{}".\
-    logger.info(engine_string)
-    engine = sql.create_engine(engine_string)
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    book_rec =  Book_Recommendations(User_Pick = user_pick, Genre= genre, Book_Recommendation= book_rec, Book_Cover = book_cover)
-    session.add(book_rec)
-    session.commit()
-    logger.info("Added book recommendation to database: " + book_rec)
-    session.close()
-
-
