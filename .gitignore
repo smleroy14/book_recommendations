@@ -3,3 +3,4 @@ data/raw_from_s3/*.csv
 data/*.csv
 data/*.pkl
 data/recs/*.csv
+data/raw_private_s3/*.csv
