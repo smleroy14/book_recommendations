@@ -15,8 +15,12 @@ load_data_s3:
     bucket_name: "michel-avc-project-private"
     s3_file_names: ["raw/books.csv", "raw/book_tags.csv", "raw/ratings.csv", "raw/tags.csv", "raw/to_read.csv"]
 gen_features:
+  download_from_S3:
+    bucket_name: "michel-avc-project-private"
+    s3_file_names:  ["raw/books.csv", "raw/book_tags.csv", "raw/ratings.csv", "raw/tags.csv", "raw/to_read.csv"]
+    local_file_names: ["data/raw_private_s3/books.csv", "data/raw_private_s3/book_tags.csv", "data/raw_private_s3/ratings.csv", "data/raw_private_s3/tags.csv", "data/raw_private_s3/to_read.csv"]
   get_books_df:
-    csv_dict: {'book_tags': 'data/raw_from_s3/book_tags.csv', 'tags_xwalk' : 'data/raw_from_s3/tags.csv', 'books' : 'data/raw_from_s3/books.csv'}
+    csv_dict: {'book_tags': 'data/raw_private_s3/book_tags.csv', 'tags_xwalk' : 'data/raw_private_s3/tags.csv', 'books' : 'data/raw_private_s3/books.csv'}
   get_genres:
     genre_dict: { 'Fiction' : ['fiction', 'adult-fiction', 'general-fiction'] , 'Fantasy' : ['fantasy', 'magic'], 'Young Adult': ['young-adult', 'ya', 'teen'], 'Classics' : ['classics', 'literature'], 'Romance': ['romance'], 'Mystery': ['mystery', 'thriller', 'crime', 'suspense'], 'Non-Fiction': ['non-fiction', 'nonfiction'], 'Biography': ['memoir', 'biography'], 'History': ['historical', 'history'], 'Historical Fiction' : ['historical-fiction'], 'Science Fiction': ['sci-fi', 'sci-fi-fantasy'], 'Childrens' : ['childrens', 'children-s', 'kids', 'children-s-books'], 'Graphic Novel': ['graphic-novels', 'comics', 'graphic-novel'], 'Adventure': ['adventure'], 'Dystopian': ['dystopian', 'dystopia'], 'Chick-lit': ['chick-lit'], 'Humor' : ['humor']}
   drop_genre: 

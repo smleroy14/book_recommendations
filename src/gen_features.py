@@ -79,7 +79,7 @@ def run_gen_features():
         config = yaml.load(f)
     config_try = config['gen_features']
 
-    #download_from_S3(**config_try['download_from_S3'])
+    download_from_S3(**config_try['download_from_S3'])
     book_tags_w_names = get_books_df(**config_try['get_books_df'])
     books_w_genres = get_genres(book_tags_w_names, **config_try['get_genres'])
     books_w_genres = drop_genre(books_w_genres, **config_try['drop_genre'])
