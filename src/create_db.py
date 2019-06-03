@@ -28,18 +28,23 @@ class Book_Recommendations(Base):
     __tablename__ = 'Book_Recommendations'
 
     #User_Picks + Genre will be the composite primary key for the table
-    user_id = Column(String(50), primary_key=True) #will be a string of 1 and 0 that matches the books that the user picked
-    Genre = Column(String(50), primary_key =True, unique=False, nullable=False) #The genre that the user picks
-    book_rec1 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    book_cover1 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
-    book_rec2 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    book_cover2 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
-    book_rec3 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    book_cover3 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
-    book_rec4 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    book_cover4 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
-    book_rec5 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
-    book_cover5 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    user = Column(String(50), primary_key=True) #will be a string of 1 and 0 that matches the books that the user picked
+    genre = Column(String(50), primary_key =True, unique=False, nullable=False) #The genre that the user picks
+    author1 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    title1 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended 
+    cover1 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    author2 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    title2 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended 
+    cover2 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    author3 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    title3 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended 
+    cover3 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    author4 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    title4 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended 
+    cover4 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
+    author5 = Column(String(200), unique=False, nullable = False) #the book recommendation for the user
+    title5 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended 
+    cover5 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
 
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover

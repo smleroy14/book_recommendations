@@ -5,6 +5,7 @@ from db_conn import dbConn
 
 def read_recs():
     """ Takes the predictions for the new users and merges with the book cover picture url"""
+    
 
 
 def insert_data(sqllite=True):
