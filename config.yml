@@ -48,4 +48,10 @@ score_model:
     neighbors: 30
     min_neighbors: 5
     seed: 12345
-    kfolds: 5    
+    kfolds: 5
+create_db:
+insert_db:
+  read_recs:
+    genre_csv: "data/recs/Chick-lit-recs.csv"
+    genre: "Chick-lit"
+    books_csv: "data/raw_private_s3/books.csv"   
