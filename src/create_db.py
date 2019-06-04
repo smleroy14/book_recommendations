@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 import sqlalchemy as sql
 import logging
+import yaml
 import pandas as pd
 import os
 import argparse
@@ -49,11 +50,10 @@ class Book_Recommendations(Base):
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover
 
-def create_db(sqllite = True):
+def create_db(SQL_URI=None):
     """Create a database in RDS or locally on sql lite based on user preference"""
     
-    if sqllite = True:
-        SQL_URI = "sqlite:///data/database.db"
+    if SQL_URI:
         engine_string = SQL_URI
         engine = sql.create_engine(engine_string) 
         Base.metadata.create_all(engine)
@@ -81,9 +81,5 @@ if __name__ == "__main__":
         config = yaml.load(f)
     config_try = config['create_db']
 
-    create_db(**config_try['create_db'])
+    create_db()
 
-    parser = argparse.ArgumentParser(description="Create database")
-    parser.add_argument('--rds', default=True, type=str2bool, help='True to create RDS database, False creates sqllite database')
-    args = parser.parse_args()
-    create_db(args.rds)

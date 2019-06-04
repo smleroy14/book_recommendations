@@ -1,6 +1,10 @@
 # Book Recommendation App project repository
 # For Mid-Project Review
 
+Author: Michel LeRoy
+QA: Alicia Burris
+
+
 <!-- toc -->
 
 - [Project Charter](#project-charter)
@@ -115,8 +119,15 @@ DATABASE_NAME=""
 Next, source these configurations using
 
 ```bash
-echo 'config/dbconfig' >> ~/.bashrc
+echo 'source config/dbconfig' >> ~/.bashrc
 source ~/.bashrc
+```
+
+Note: You have been kicked off your virtual environment after running the source command 
+You need to rerun 
+
+```bash
+source book_recs/bin/activate
 ```
 
 Finally, to create the RDS database with these configurations, run: 

@@ -1,7 +1,9 @@
 import pandas as pd
 import os
-#from schema import Book_Recommendations
-
+from create_db import Book_Recommendations
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+import sqlalchemy as sql
 import logging
 import yaml
 import argparse
@@ -28,18 +30,33 @@ def read_recs(genre_csv, genre, books_csv):
 	logger.info(recs_for_db.head())
 	return recs_for_db
 
-#def insert_data(sqllite=True):
-#	recs_df = read_recs()
+def add_data(df, table_name, SQL_URI=None):
 
-#	#if sqllite = True, do it
-#	if sqllite:
-#		#something
-#		# conn = dbConn('../../data/song.sqlite')
-#		# song_df.to_sql(name='Song', con=conn, if_exists='replace', index=True)
+    #if sqllite = True, add df to local SQLlite database
+    if SQL_URI:
+#       SQL_URI = os.environ.get("SQL_URI")
+#        SQL_URI = "sqlite:///data/database.db" 
+        engine_string = SQL_URI
+        engine = sql.create_engine(engine_string)
+        df.to_sql(name=table_name, con=engine, if_exists='replace', index=True)
 	    
-#	#If False, insert to RDS database
-#	else:
-#		#song_df.to_sql("Song", db.engine, if_exists='replace', index=False)
+    #If False, add df to RDS database
+    else:
+        #get configurations from .mysqlconfig
+        conn_type = "mysql+pymysql"
+        user = os.environ.get("MYSQL_USER")
+        password =  os.environ.get("MYSQL_PASSWORD")
+        host = os.environ.get("MYSQL_HOST")
+        port = os.environ.get("MYSQL_PORT")
+        DATABASE_NAME = os.environ.get("DATABASE_NAME")
+
+	# the engine_string format
+	#engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
+        engine_string = "{}://{}:{}@{}:{}/{}".\
+        format(conn_type, user, password, host, port, DATABASE_NAME)
+        print(engine_string)
+        engine = sql.create_engine(engine_string)
+        df.to_sql(table_name, engine, if_exists='replace', index=False)
                 
 
 if __name__=='__main__':
@@ -49,5 +66,5 @@ if __name__=='__main__':
 
 	recs_for_db = read_recs(**config_try['read_recs'])
 	print(recs_for_db.head())
-	#insert_data(**config_try['insert_data'])
+	add_data(recs_for_db, **config_try['add_data'])
 
