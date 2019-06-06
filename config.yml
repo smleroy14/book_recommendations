@@ -50,7 +50,7 @@ score_model:
     seed: 12345
     kfolds: 5
 create_db:
-  create_db:
+  create_db: "sqlite:///data/database.db"
 insert_db:
   read_recs:
     genre_csv: "data/recs/Chick-lit-recs.csv"

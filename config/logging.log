@@ -7362,3 +7362,7 @@ src/insert_db.py - INFO - 2019-06-03 19:48:28,519 -                user         
 4  1063, 1111, 1417  https://s.gr-assets.com/assets/nophoto/book/11...  https://s.gr-assets.com/assets/nophoto/book/11...  https://s.gr-assets.com/assets/nophoto/book/11...    ...      The Boy Next Door (Boy #1)       Everyone Worth Knowing        Watermelon  Chick-lit
 
 [5 rows x 17 columns]
+werkzeug - INFO - 2019-06-05 22:17:06,476 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-05 22:17:06,479 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-05 22:17:07,207 -  * Debugger is active!
+werkzeug - INFO - 2019-06-05 22:17:07,227 -  * Debugger PIN: 943-297-670
