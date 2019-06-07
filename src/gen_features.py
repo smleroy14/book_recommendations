@@ -62,15 +62,8 @@ def get_genre_rating_dfs(df, ratings_csv, save_file_path):
     print(ratings.head())
 
     books_w_genres = df[['book_id', 'goodreads_book_id', 'title', 'genre']]
-    genres = books_w_genres['genre'].unique()
-    df_dict = {}
-    for genre in genres:
-        df_dict[genre] = pd.DataFrame()
-
-    for key in df_dict.keys():
-        df_dict[key] = books_w_genres[:][books_w_genres.genre == key]
-        df_dict[key] = df_dict[key].merge(ratings, how='left', on='book_id')
-        df_dict[key].to_pickle(save_file_path + key + ".pkl")
+    books_w_genres = books_w_genres.merge(ratings, how='left', on='book_id')
+    books_w_genres.to_csv(save_file_path)
 
 def run_gen_features():
     """Orchestrates getting the data from config file arguments."""
