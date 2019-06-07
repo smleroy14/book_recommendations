@@ -7,33 +7,31 @@ import traceback
 import logging
 
 
-# Define LOGGING_CONFIG in flask_config.py - path to config file for setting
-# up the logger (e.g. config/logging/local.conf)
-logging.config.fileConfig(app.config["LOGGING_CONFIG"])
-logger = logging.getLogger("penny-lane")
-logger.debug('Test log')
-
 # Initialize the Flask application
 app = Flask(__name__)
+
 # Configure flask app from flask_config.py
 app.config.from_pyfile('flask_config.py')
 
-db = SQLAlchemy(app)
+#Logging file 
+logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
+logger = logging.getLogger(__file__)
 
-genre = ''
+#Initialize the database
+db = SQLAlchemy(app)
 
 
 @app.route('/')
 def intro_page():
-   """Main view that lists genres in the database.
-    Create view into index page that uses data queried from Book recs database and
-    inserts it into the /templates/choose_genre.html template.
+    """Main view that lists genres for the user to choose from.
     Returns: rendered html template
     """
-    
-    logger.info('At introductory app page.')
+
+    logger.info('At first page: choose_genre')
+    logger.debug("Listing genres")
     return render_template('choose_genre.html')
+    
 
 if __name__ == "__main__":
-	
-	app.run(debug=app.config["DEBUG"], port=app.config["PORT"], host=app.config["HOST"])
+    	
+    app.run(debug=app.config["DEBUG"], port=app.config["PORT"], host=app.config["HOST"])

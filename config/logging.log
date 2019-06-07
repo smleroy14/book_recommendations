@@ -7366,3 +7366,170 @@ werkzeug - INFO - 2019-06-05 22:17:06,476 -  * Running on http://0.0.0.0:3000/ (
 werkzeug - INFO - 2019-06-05 22:17:06,479 -  * Restarting with stat
 werkzeug - WARNING - 2019-06-05 22:17:07,207 -  * Debugger is active!
 werkzeug - INFO - 2019-06-05 22:17:07,227 -  * Debugger PIN: 943-297-670
+werkzeug - INFO - 2019-06-06 22:20:53,808 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 22:20:53,810 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 22:20:54,333 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 22:20:54,343 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 22:21:13,498 - At introductory app page.
+werkzeug - INFO - 2019-06-06 22:21:13,531 - 165.124.145.160 - - [06/Jun/2019 22:21:13] "GET / HTTP/1.1" 500 -
+werkzeug - INFO - 2019-06-06 22:21:18,689 - 165.124.145.160 - - [06/Jun/2019 22:21:18] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:21:18,706 - 165.124.145.160 - - [06/Jun/2019 22:21:18] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:21:18,709 - 165.124.145.160 - - [06/Jun/2019 22:21:18] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:21:19,809 - 165.124.145.160 - - [06/Jun/2019 22:21:19] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:21:19,889 - 165.124.145.160 - - [06/Jun/2019 22:21:19] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:21:19,936 - 165.124.145.160 - - [06/Jun/2019 22:21:19] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:26:00,735 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 22:26:00,735 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 22:26:01,260 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 22:26:01,265 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 22:26:05,633 - At introductory app page.
+werkzeug - INFO - 2019-06-06 22:26:05,638 - 165.124.145.160 - - [06/Jun/2019 22:26:05] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 22:26:05,678 - 165.124.145.160 - - [06/Jun/2019 22:26:05] "GET /static/basic.css HTTP/1.1" 404 -
+werkzeug - INFO - 2019-06-06 22:26:27,383 - 165.124.145.160 - - [06/Jun/2019 22:26:27] "POST / HTTP/1.1" 405 -
+werkzeug - INFO - 2019-06-06 22:26:32,577 - 165.124.145.160 - - [06/Jun/2019 22:26:32] "GET /favicon.ico HTTP/1.1" 404 -
+werkzeug - INFO - 2019-06-06 23:01:35,491 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:01:35,492 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:01:36,025 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:01:36,029 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:01:55,889 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:01:55,894 - 165.124.145.160 - - [06/Jun/2019 23:01:55] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:02:01,045 - 165.124.145.160 - - [06/Jun/2019 23:02:01] "GET /static/basic.css HTTP/1.1" 404 -
+werkzeug - INFO - 2019-06-06 23:02:14,749 - 165.124.145.160 - - [06/Jun/2019 23:02:14] "POST / HTTP/1.1" 405 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:02:34,802 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:02:34,802 - 174.129.63.19 - - [06/Jun/2019 23:02:34] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:05:13,142 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:05:13,143 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:05:13,672 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:05:13,676 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:05:17,353 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:05:17,358 - 165.124.145.160 - - [06/Jun/2019 23:05:17] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:05:17,417 - 165.124.145.160 - - [06/Jun/2019 23:05:17] "GET /static/basic.css HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:07:47,457 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:07:47,457 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:07:47,988 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:07:47,992 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:07:55,689 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:07:55,694 - 165.124.145.160 - - [06/Jun/2019 23:07:55] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:10:48,570 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:10:48,570 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:10:49,095 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:10:49,100 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:10:55,458 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:10:55,462 - 165.124.145.160 - - [06/Jun/2019 23:10:55] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:11:00,020 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:11:00,020 - 165.124.145.160 - - [06/Jun/2019 23:11:00] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:11:07,133 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:11:07,134 - 165.124.145.160 - - [06/Jun/2019 23:11:07] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:13:59,668 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:13:59,669 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:14:00,197 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:14:00,202 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:14:03,062 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:14:03,067 - 165.124.145.160 - - [06/Jun/2019 23:14:03] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:16:50,960 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:16:50,960 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:16:51,488 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:16:51,493 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:16:55,437 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:16:55,442 - 165.124.145.160 - - [06/Jun/2019 23:16:55] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:16:57,746 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:16:57,746 - 165.124.145.160 - - [06/Jun/2019 23:16:57] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:17:04,656 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:17:04,657 - 165.124.145.160 - - [06/Jun/2019 23:17:04] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:17:23,829 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:17:23,830 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:17:24,357 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:17:24,362 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:17:29,523 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:17:29,528 - 165.124.145.160 - - [06/Jun/2019 23:17:29] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:24:21,448 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:24:21,449 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:24:21,984 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:24:21,989 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:24:27,360 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:24:27,365 - 165.124.145.160 - - [06/Jun/2019 23:24:27] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:24:31,361 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:24:31,361 - 165.124.145.160 - - [06/Jun/2019 23:24:31] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:28:15,201 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:28:15,202 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:28:15,734 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:28:15,738 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:28:22,154 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:28:22,159 - 165.124.145.160 - - [06/Jun/2019 23:28:22] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:35:03,097 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:35:03,098 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:35:03,622 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:35:03,626 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:35:07,536 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:35:07,541 - 165.124.145.160 - - [06/Jun/2019 23:35:07] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:36:49,066 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:36:49,067 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:36:49,596 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:36:49,601 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:36:54,058 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:36:54,063 - 165.124.145.160 - - [06/Jun/2019 23:36:54] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:37:36,736 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:37:36,737 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:37:37,265 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:37:37,269 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:37:40,574 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:37:40,579 - 165.124.145.160 - - [06/Jun/2019 23:37:40] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:46,066 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-06 23:53:46,066 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-06 23:53:46,589 -  * Debugger is active!
+werkzeug - INFO - 2019-06-06 23:53:46,594 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-06 23:53:51,428 - At introductory app page.
+werkzeug - INFO - 2019-06-06 23:53:51,449 - 165.124.145.160 - - [06/Jun/2019 23:53:51] "GET / HTTP/1.1" 500 -
+werkzeug - INFO - 2019-06-06 23:53:56,519 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:56,539 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:56,540 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:56,809 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:56,879 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-06 23:53:56,926 - 165.124.145.160 - - [06/Jun/2019 23:53:56] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:32,699 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-07 00:04:32,700 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-07 00:04:33,235 -  * Debugger is active!
+werkzeug - INFO - 2019-06-07 00:04:33,239 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 00:04:36,058 - At introductory app page.
+werkzeug - INFO - 2019-06-07 00:04:36,072 - 165.124.145.160 - - [07/Jun/2019 00:04:36] "GET / HTTP/1.1" 500 -
+werkzeug - INFO - 2019-06-07 00:04:42,326 - 165.124.145.160 - - [07/Jun/2019 00:04:42] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:45,350 - 165.124.145.160 - - [07/Jun/2019 00:04:45] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:45,353 - 165.124.145.160 - - [07/Jun/2019 00:04:45] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:46,127 - 165.124.145.160 - - [07/Jun/2019 00:04:46] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:46,237 - 165.124.145.160 - - [07/Jun/2019 00:04:46] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:04:46,313 - 165.124.145.160 - - [07/Jun/2019 00:04:46] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:23:30,924 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-07 00:23:30,925 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-07 00:23:31,458 -  * Debugger is active!
+werkzeug - INFO - 2019-06-07 00:23:31,463 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 00:23:37,938 - At introductory app page.
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 00:23:38,048 - Listing genres
+werkzeug - INFO - 2019-06-07 00:23:38,053 - 165.124.145.160 - - [07/Jun/2019 00:23:38] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 00:52:59,932 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-07 00:52:59,933 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-07 00:53:00,466 -  * Debugger is active!
+werkzeug - INFO - 2019-06-07 00:53:00,471 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 00:53:05,023 - At introductory app page.
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 00:53:05,052 - Listing genres
+werkzeug - INFO - 2019-06-07 00:53:05,057 - 165.124.145.160 - - [07/Jun/2019 00:53:05] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 01:07:08,953 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-07 01:07:08,953 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-07 01:07:09,473 -  * Debugger is active!
+werkzeug - INFO - 2019-06-07 01:07:09,477 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 01:07:14,521 - At introductory app page.
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 01:07:14,557 - Listing genres
+werkzeug - INFO - 2019-06-07 01:07:14,561 - 165.124.145.160 - - [07/Jun/2019 01:07:14] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-07 01:07:25,627 - 165.124.145.160 - - [07/Jun/2019 01:07:25] "POST / HTTP/1.1" 405 -
+werkzeug - INFO - 2019-06-07 01:09:15,316 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-07 01:09:15,317 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-07 01:09:15,846 -  * Debugger is active!
+werkzeug - INFO - 2019-06-07 01:09:15,851 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 01:09:19,691 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 01:09:19,691 - Listing genres
+werkzeug - INFO - 2019-06-07 01:09:19,696 - 165.124.145.160 - - [07/Jun/2019 01:09:19] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 01:09:21,672 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 01:09:21,673 - Listing genres
+werkzeug - INFO - 2019-06-07 01:09:21,673 - 165.124.145.160 - - [07/Jun/2019 01:09:21] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-07 01:09:28,799 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-07 01:09:28,799 - Listing genres
+werkzeug - INFO - 2019-06-07 01:09:28,799 - 165.124.145.160 - - [07/Jun/2019 01:09:28] "GET / HTTP/1.1" 200 -

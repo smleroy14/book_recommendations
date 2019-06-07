@@ -57,4 +57,4 @@ insert_db:
     genre: "Chick-lit"
     books_csv: "data/raw_private_s3/books.csv"
   add_data:
-    table_name: "Book_Recommendations"
+    

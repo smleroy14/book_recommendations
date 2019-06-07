@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap');
+
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 104px;
+  background-color:#cdced8;
+}

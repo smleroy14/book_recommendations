@@ -50,6 +50,22 @@ class Book_Recommendations(Base):
     def __repr__(self):
         return '<Book_Recommendations %r>' % self.Book_Cover
 
+
+class Top_Books(Base):
+    """ Creates the table of all the top books by each genre for the user to choose from"""
+
+    __tablename__ = "Top_Books"
+
+    #Book Id will be the primary key for the table
+    book_id = Column(Integer, primary_key = True, unique = True, nullable = False) 
+    author = Column(String(200), unique = False, nullable = False)
+    title = Column(String(200), unique = False, nullable = False)
+
+    def __repr__(self):
+        top_books_repr = "<Top_Books(book_id='%d', author='%s', title='%s')>"
+        return top_ten_beers_repr %(self.book_id, self.author, self.title)
+
+
 def create_db(SQL_URI=None):
     """Create a database in RDS or locally on sql lite based on user preference"""
     

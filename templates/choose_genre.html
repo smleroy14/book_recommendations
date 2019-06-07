@@ -2,46 +2,41 @@
 <html lang="en">
 <meta charset="UTF-8"">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<head>
-    <meta charset="UTF-8">
-    <link href="static/basic.css" rel="stylesheet">
-    <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/198/clinking-beer-mugs_1f37b.png">
-</head>
+  <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap">
+    <style>
+      body {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 48px;
+      }
+    </style>
+  </head>
 <body>
 <div id="container" align="center">
   <div class="main">
     <br>
     <br>
-    <gulpheading>🍺Gulp!🍺</mainheading>
+    <heading>Book it to the Library</heading>
     <br>
     <br>
-    <mainheading>The Beer Recommendation App</mainheading>
+    <mainheading>A Book Recommendation App</mainheading>
     <br>
     <br>
-    <br>
-    <beertext> Choose a beer type from the following options. Read the descriptions below to learn more about different types of beer. </beertext>
+    <text> To get started, choose a genre! </text>
     <hr style="width:40%">
-    <form class=inputs method=post name=userinput action="{{ url_for('add_entry')}}">
+    <form class=inputs method=post name=userinput action="{{ url_for('intro_page')}}">
     <p>
       <div align="center" >
         <select name="beertype" id="beertype" class="form-control unstyled">
             <option>
-                Beer Type
+                Genre
             </option>
-            <option value="Stout" >Stout</option>
-            <option value="Porter" >Porter</option>
-            <option value="IPA" >IPA</option>
-            <option value="Wheat Ale" >Wheat Ale</option>
-            <option value="Pale Ale" >Pale Ale</option>
-            <option value="Sour" >Sour</option>
-            <option value="Strong Ale" >Strong Ale</option>
-            <option value="Pilsner" >Pilsner</option>
-            <option value="Dark Lager" >Dark Lager</option>
-            <option value="Brown Ale" >Brown Ale</option>
+	    <option value="Chick-lit" >Chick-lit</option>
         </select>
       </div>
       <p align="center">
-        <button type="submit" style="color:black;" > Explore Beer Type! </button> 
+        <button type="submit" style="color:black;" > Next </button> 
         </p>
       </form>
       

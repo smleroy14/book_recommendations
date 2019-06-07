@@ -30,12 +30,30 @@ def read_recs(genre_csv, genre, books_csv):
 	logger.info(recs_for_db.head())
 	return recs_for_db
 
+def get_top_books(genre):
+    data = pd.read_pickle(genre_pickle_file)
+    data = data[['user_id','book_id','rating']]
+
+    #get top books for choices
+    top_books = data.groupby(['book_id']).count().reset_index()
+    top_books = top_books[['book_id']]
+    top_books = top_books.head(num_choices)
+
+    #sort on book id, so combos are always in increasing order for user_id
+    top_books = top_books.sort_values('book_id', ascending = True).reset_index()
+    top_books[['book_id']]
+    
+    #merge on books to get author and title
+    top_books = pd.merge(top_books, books, how='left', on='book_id')
+    top_books = top_books[['book_id','authors', 'original_title']]
+    top_books.columns = ['book_id', 'author', 'title']
+    return top_books
+
+
 def add_data(df, table_name, SQL_URI=None):
 
     #if sqllite = True, add df to local SQLlite database
     if SQL_URI:
-#       SQL_URI = os.environ.get("SQL_URI")
-#        SQL_URI = "sqlite:///data/database.db" 
         engine_string = SQL_URI
         engine = sql.create_engine(engine_string)
         df.to_sql(name=table_name, con=engine, if_exists='replace', index=True)
@@ -66,5 +84,5 @@ if __name__=='__main__':
 
 	recs_for_db = read_recs(**config_try['read_recs'])
 	print(recs_for_db.head())
-	add_data(recs_for_db, **config_try['add_data'])
-
+	add_data(recs_for_db, 'Book_Recommendations')
+        add_data(top_books, 'Top_Books')
