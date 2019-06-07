@@ -56,29 +56,39 @@ def drop_genre(df, genres_to_drop = []):
             df = df[df['genre']!=genre]
     return df
 
-def get_genre_rating_dfs(df, ratings_csv, save_file_path):
+def get_genre_rating_dfs(df, ratings_csv):
     """Create a dictionary with a dataframe for each individual genre, and pickle each dataframe"""
     ratings = pd.read_csv(ratings_csv)
     print(ratings.head())
 
     books_w_genres = df[['book_id', 'goodreads_book_id', 'title', 'genre']]
     books_w_genres = books_w_genres.merge(ratings, how='left', on='book_id')
-    books_w_genres.to_csv(save_file_path)
+    return books_w_genres
 
 def run_gen_features():
     """Orchestrates getting the data from config file arguments."""
     
-    with open("config.yml", "r") as f:
+    with open(args.config, "r") as f:
         config = yaml.load(f)
     config_try = config['gen_features']
+
+    path = args.output
 
     download_from_S3(**config_try['download_from_S3'])
     book_tags_w_names = get_books_df(**config_try['get_books_df'])
     books_w_genres = get_genres(book_tags_w_names, **config_try['get_genres'])
     books_w_genres = drop_genre(books_w_genres, **config_try['drop_genre'])
-    get_genre_rating_dfs(books_w_genres, **config_try['get_genre_rating_dfs'])
+    books_w_genres = get_genre_rating_dfs(books_w_genres, **config_try['get_genre_rating_dfs'])
+    books_w_genres.to_csv(path)    
 
 
 if __name__ == "__main__":
-    run_gen_features()
+    parser = argparse.ArgumentParser(description="Predict books for new users")
+    parser.add_argument("--config", "-c", default="config.yml",
+                        help="Path to the test configuration file")
+    parser.add_argument("--output", "-o",  default="data/books_w_genres.csv",
+                        help="Path to save dataframe to input into model")
+    args = parser.parse_args()
+
+    run_gen_features(args)
 

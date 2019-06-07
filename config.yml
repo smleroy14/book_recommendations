@@ -29,8 +29,8 @@ gen_features:
     ratings_csv: "data/raw_from_s3/ratings.csv"
     save_file_path: "data/books_w_genres.csv"
 train_model:
+  genres: ["Chick-lit", "Humor"]
   get_combo_df:
-    genre_pickle_file: "data/Chick-lit.pkl"
     num_choices: 20
     num_picks: 3
   train_model:
@@ -40,21 +40,16 @@ train_model:
   get_top_n:
     n_start: 17
     n_end: 22
-  get_recs:
-    path_save_recs: "data/recs/Chick-lit-recs.csv"
 score_model:
+  genres: ['Chick-lit', 'Humor']
   get_accuracy:
-    genre_pickle: "data/Chick-lit.pkl"
     neighbors: 30
     min_neighbors: 5
     seed: 12345
     kfolds: 5
-create_db:
-  create_db: "sqlite:///data/database.db"
 insert_db:
   read_recs:
-    genre_csv: "data/recs/Chick-lit-recs.csv"
-    genre: "Chick-lit"
     books_csv: "data/raw_private_s3/books.csv"
-  add_data:
-    
+  get_top_books:
+    num_choices: 20
+    books_csv: "data/raw_private_s3/books.csv"

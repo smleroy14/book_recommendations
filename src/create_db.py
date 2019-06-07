@@ -12,14 +12,7 @@ import argparse
 logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
 logger = logging.getLogger(__file__)
 
-def str2bool(v):
-   if v.lower() in ('yes', 'true', 't', 'y', '1'):
-       return True
-   elif v.lower() in ('no', 'false', 'f', 'n', '0'):
-       return False
-   else:
-       raise argparse.ArgumentTypeError('Boolean value expected.')
-   
+
 Base = declarative_base()
 
 class Book_Recommendations(Base):
@@ -58,6 +51,7 @@ class Top_Books(Base):
 
     #Book Id will be the primary key for the table
     book_id = Column(Integer, primary_key = True, unique = True, nullable = False) 
+    genre = Column(String(50), primary_key = False, unique = False, nullable = False)
     author = Column(String(200), unique = False, nullable = False)
     title = Column(String(200), unique = False, nullable = False)
 
@@ -69,7 +63,7 @@ class Top_Books(Base):
 def create_db(SQL_URI=None):
     """Create a database in RDS or locally on sql lite based on user preference"""
     
-    if SQL_URI:
+    if SQL_URI is not None:
         engine_string = SQL_URI
         engine = sql.create_engine(engine_string) 
         Base.metadata.create_all(engine)
@@ -93,9 +87,9 @@ def create_db(SQL_URI=None):
 
 
 if __name__ == "__main__":
-    with open("config.yml", "r") as f:
-        config = yaml.load(f)
-    config_try = config['create_db']
 
-    create_db()
-
+    parser = argparse.ArgumentParser(description="Create database")
+    parser.add_argument("--SQL_URI", default=None,
+                        help = "If not None, save to sqllite with this URI, else save to RDS db")
+    args = parser.parse_args()
+    create_db(args.SQL_URI)

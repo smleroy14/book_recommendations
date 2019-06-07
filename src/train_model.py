@@ -21,7 +21,7 @@ logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.D
 logger = logging.getLogger(__file__)
 
 
-def get_combo_df(genre_pickle_file, num_choices, num_picks):
+def get_combo_df(df, genre, num_choices, num_picks):
     """ Iterates through the top 20 books of a genre and
     gets all combinations of choosing 3 of these
     
@@ -29,7 +29,7 @@ def get_combo_df(genre_pickle_file, num_choices, num_picks):
     books they chose
     """
 
-    data = pd.read_pickle(genre_pickle_file)
+    data = df[df['genre']==genre]
     data = data[['user_id','book_id','rating']]
 
     #get top books for choices
@@ -123,7 +123,7 @@ def take(n, iterable):
     "Return first n items of the iterable as a list"
     return list(islice(iterable, n))
 
-def get_recs(top_n, num_combos, path_save_recs):
+def get_recs(top_n, num_combos):
     n_items = take(num_combos, top_n.items())
     preds = []
     for uid, user_ratings in n_items:
@@ -134,23 +134,48 @@ def get_recs(top_n, num_combos, path_save_recs):
         .merge(preds_df, right_index = True, left_index = True) \
         .drop(["recommendations"], axis = 1)
     recs.columns = ['book1', 'book2', 'book3', 'book4', 'book5', 'user'] 
-    recs.to_csv(path_save_recs, index = False)
+    return recs
 
-def run_train_model():
+def run_train_model(args):
     """Orchestrates getting the data from config file arguments."""
 
-    with open("config.yml", "r") as f:
+    with open(args.config, "r") as f:
         config = yaml.load(f)
     config_try = config['train_model']
 
-    combo_ratings, data, num_combos = get_combo_df(**config_try['get_combo_df'])
-    predictions = train_model(combo_ratings, data, **config_try['train_model'])
-    top_n = get_top_n(predictions, **config_try['get_top_n'])
-    get_recs(top_n, num_combos, **config_try['get_recs'])
+    path = args.output
 
+    genres = config_try['genres']
+    logger.info(genres)
+    
+    if args.input is not None:
+        df = pd.read_csv(args.input)
+        logger.info("Features for input into model loaded from %s", args.input)
+    else:
+        raise ValueError("Path to CSV for input data must be provided through --input for training.")
+
+    all_recs = pd.DataFrame()
+    for genre in genres:
+        logger.info("getting predictions for %s", genre)
+        combo_ratings, data, num_combos = get_combo_df(df, genre, **config_try['get_combo_df'])
+        predictions = train_model(combo_ratings, data, **config_try['train_model'])
+        top_n = get_top_n(predictions, **config_try['get_top_n'])
+        recs = get_recs(top_n, num_combos)
+        recs['genre'] = genre
+        all_recs = all_recs.append(recs, ignore_index = True)
+    all_recs.to_csv(path)
     
 
 if __name__ == "__main__":
-    run_train_model()
+    parser = argparse.ArgumentParser(description="Predict books for new users")
+    parser.add_argument("--config", "-c", default="config.yml",
+                        help="Path to the test configuration file")
+    parser.add_argument("--input", "-i", default="data/books_w_genres.csv",
+                        help="Path to input data for scoring")
+    parser.add_argument("--output", "-o",  default="data/recs/all_recs.csv",
+                        help="Path to where to save output predictions")
+    args = parser.parse_args()
+
+    run_train_model(args)
 
 

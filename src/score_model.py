@@ -52,8 +52,8 @@ def precision_recall_at_k(predictions, k=10, threshold=3):
 
     return precisions, recalls
 
-def get_accuracy(genre_pickle, neighbors = 30, min_neighbors = 5, seed = 12345, kfolds = 5):
-	data = pd.read_pickle(genre_pickle)
+def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfolds = 5):
+	data = df[df['genre'==genre]]
 	data = data[['user_id','book_id','rating']]
 	reader = Reader(rating_scale=(1, 5))
 	data = Dataset.load_from_df(data[['user_id', 'book_id', 'rating']], reader)
@@ -74,12 +74,30 @@ def get_accuracy(genre_pickle, neighbors = 30, min_neighbors = 5, seed = 12345, 
 def run_score_model():
     """Orchestrates getting the data from config file arguments."""
 
-    with open("config.yml", "r") as f:
+    with open(args.config, "r") as f:
         config = yaml.load(f)
     config_try = config['score_model']
+    
+    genres = config_try['genres']
 
-    get_accuracy(**config_try['get_accuracy'])
+    if args.input is not None:
+        df = pd.read_csv(args.input)
+        logger.info(""Features for input into model loaded from %s", args.input)
+    else:
+        raise ValueError("Path to CSV for input data must be provided through --input in order to score the model.")
+
+    for genre in genres:
+        logger.info("calculating precision and recall for %s, genre)
+        get_accuracy(df, genre, **config_try['get_accuracy'])
+     
 
 if __name__ == "__main__":
-    run_score_model()
+    parser = argparse.ArgumentParser(description="Score the models")
+    parser.add_argument("--config", "-c", default="config.yml",
+                        help="Path to the test configuration file")
+    parser.add_argument("--input", "-i", default="data/books_w_genres.csv",
+                        help="Path to input data for scoring")
+    args = parser.parse_args()
+
+    run_score_model(args)
 
