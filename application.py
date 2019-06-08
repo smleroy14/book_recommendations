@@ -20,9 +20,6 @@ logger = logging.getLogger(__file__)
 #Initialize the database
 db = SQLAlchemy(app)
 
-genre = ''
-user_id = ''
-
 @app.route('/')
 def intro_page():
     """Main view that lists genres for the user to choose from.
@@ -73,9 +70,10 @@ def get_recs():
     #sort user choices in order to create user id 
     user_choice_list = [firstbook, secondbook, thirdbook]
     user_choice_list.sort()
-    global user_id = ''
+    global user_id
     user_id = str(user_choice_list[0]) + ', ' + str(user_choice_list[1]) + ', ' + str(user_choice_list[2])
     try:
+        global recs
         recs = db.session.query(Book_Recommendations).filter_by(user=user_id)
         logger.debug("Recommendation Query Accessed for user %s", user_id)
         return render_template('recommendations1.html', recs = recs)
@@ -84,18 +82,56 @@ def get_recs():
         logger.warning("Not able to display recommendations, error page returned")
         return render_template('error-generic.html')
 
-@app.route('/recommendations2', methods=['POST'])
+@app.route('/recommendations2')
 def get_recs2():
     """View that process a POST with book choice inputs and displays recommendations, queried from DB.
     Returns: rendered html template
     """
     try:
-        recs = db.session.query(Book_Recommendations).filter_by(user=user_id)
-        logger.debug("Recommendation Query Accessed for user %s", user_id)
+        logger.debug("Displaying second Recommendation for user %s", user_id)
         return render_template('recommendations2.html', recs = recs)
     except:
         traceback.print_exc()
-        logger.warning("Not able to display recommendations, error page returned")
+        logger.warning("Not able to display recommendations2, error page returned")
+        return render_template('error-generic.html')
+
+@app.route('/recommendations3')
+def get_recs3():
+    """View that process a POST with book choice inputs and displays recommendations, queried from DB.
+    Returns: rendered html template
+    """
+    try:
+        logger.debug("Displaying Third Recommendation for user %s", user_id)
+        return render_template('recommendations3.html', recs = recs)
+    except:
+        traceback.print_exc()
+        logger.warning("Not able to display recommendations3, error page returned")
+        return render_template('error-generic.html')
+
+@app.route('/recommendations4')
+def get_recs4():
+    """View that process a POST with book choice inputs and displays recommendations, queried from DB.
+    Returns: rendered html template
+    """
+    try:
+        logger.debug("Displaying Fourth Recommendation for user %s", user_id)
+        return render_template('recommendations4.html', recs = recs)
+    except:
+        traceback.print_exc()
+        logger.warning("Not able to display recommendations4, error page returned")
+        return render_template('error-generic.html')
+
+@app.route('/recommendations5')
+def get_recs5():
+    """View that process a POST with book choice inputs and displays recommendations, queried from DB.
+    Returns: rendered html template
+    """
+    try:
+        logger.debug("Displaying Fifth Recommendation for user %s", user_id)
+        return render_template('recommendations5.html', recs = recs)
+    except:
+        traceback.print_exc()
+        logger.warning("Not able to display recommendations5, error page returned")
         return render_template('error-generic.html')
 
 

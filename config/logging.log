@@ -480,3 +480,314 @@ werkzeug - WARNING - 2019-06-08 04:31:53,850 -  * Debugger is active!
 werkzeug - INFO - 2019-06-08 04:31:53,855 -  * Debugger PIN: 528-891-837
 /home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 04:31:57,087 - Recommendation Query Accessed for user 156, 647, 942
 werkzeug - INFO - 2019-06-08 04:31:57,136 - 165.124.161.135 - - [08/Jun/2019 04:31:57] "POST /recommendations HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:45:16,276 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 19:45:16,277 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 19:45:16,787 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 19:45:16,791 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:45:22,076 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:45:22,076 - Listing genres
+werkzeug - INFO - 2019-06-08 19:45:22,081 - 165.124.145.160 - - [08/Jun/2019 19:45:22] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:45:26,064 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:45:26,064 - Listing genres
+werkzeug - INFO - 2019-06-08 19:45:26,064 - 165.124.145.160 - - [08/Jun/2019 19:45:26] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:45:31,190 - 165.124.145.160 - - [08/Jun/2019 19:45:31] "GET /static/background_pic.jpg HTTP/1.1" 304 -
+werkzeug - INFO - 2019-06-08 19:45:31,275 - 165.124.145.160 - - [08/Jun/2019 19:45:31] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:46:06,742 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:46:06,742 - Listing genres
+werkzeug - INFO - 2019-06-08 19:46:06,742 - 174.129.63.19 - - [08/Jun/2019 19:46:06] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:47:19,785 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:47:19,786 - Listing genres
+werkzeug - INFO - 2019-06-08 19:47:19,786 - 3.84.147.44 - - [08/Jun/2019 19:47:19] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:47:26,370 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:47:26,684 - 165.124.145.160 - - [08/Jun/2019 19:47:26] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:47:31,977 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:47:31,977 - Listing genres
+werkzeug - INFO - 2019-06-08 19:47:31,978 - 165.124.145.195 - - [08/Jun/2019 19:47:31] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:47:32,150 - 165.124.145.195 - - [08/Jun/2019 19:47:32] "GET /static/background_pic.jpg HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:47:32,560 - 165.124.145.195 - - [08/Jun/2019 19:47:32] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:47:33,568 - Recommendation Query Accessed for user 78, 156, 465
+werkzeug - INFO - 2019-06-08 19:47:33,587 - 165.124.145.160 - - [08/Jun/2019 19:47:33] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:47:37,309 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:47:37,570 - 165.124.145.195 - - [08/Jun/2019 19:47:37] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:47:42,296 - Recommendation Query Accessed for user 310, 455, 509
+werkzeug - INFO - 2019-06-08 19:47:42,309 - 165.124.145.195 - - [08/Jun/2019 19:47:42] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:47:53,108 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:47:53,108 - Listing genres
+werkzeug - INFO - 2019-06-08 19:47:53,109 - 165.124.145.195 - - [08/Jun/2019 19:47:53] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:51:27,218 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 19:51:27,218 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 19:51:27,742 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 19:51:27,747 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:51:34,841 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:51:34,841 - Listing genres
+werkzeug - INFO - 2019-06-08 19:51:34,846 - 165.124.145.70 - - [08/Jun/2019 19:51:34] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:51:35,213 - 165.124.145.70 - - [08/Jun/2019 19:51:35] "GET /static/background_pic.jpg HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:51:35,612 - 165.124.145.70 - - [08/Jun/2019 19:51:35] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:51:50,650 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:51:50,651 - Listing genres
+werkzeug - INFO - 2019-06-08 19:51:50,651 - 165.124.145.70 - - [08/Jun/2019 19:51:50] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:51:53,778 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 19:51:54,109 - 165.124.145.70 - - [08/Jun/2019 19:51:54] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:05,574 - Recommendation Query Accessed for user 1096, 2696, 5412
+werkzeug - INFO - 2019-06-08 19:52:05,587 - 165.124.145.70 - - [08/Jun/2019 19:52:05] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:10,164 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:10,164 - Listing genres
+werkzeug - INFO - 2019-06-08 19:52:10,165 - 165.124.145.70 - - [08/Jun/2019 19:52:10] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:17,581 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:52:17,836 - 165.124.145.70 - - [08/Jun/2019 19:52:17] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:26,233 - Recommendation Query Accessed for user 156, 465, 1268
+werkzeug - INFO - 2019-06-08 19:52:26,244 - 165.124.145.70 - - [08/Jun/2019 19:52:26] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:33,904 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:33,904 - Listing genres
+werkzeug - INFO - 2019-06-08 19:52:33,904 - 165.124.145.70 - - [08/Jun/2019 19:52:33] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:37,735 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:52:37,972 - 165.124.145.70 - - [08/Jun/2019 19:52:37] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:45,022 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 19:52:45,038 - 165.124.145.70 - - [08/Jun/2019 19:52:45] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:49,894 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:52:49,895 - Listing genres
+werkzeug - INFO - 2019-06-08 19:52:49,895 - 165.124.145.70 - - [08/Jun/2019 19:52:49] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:52:58,140 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 19:52:58,384 - 165.124.145.70 - - [08/Jun/2019 19:52:58] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - WARNING - 2019-06-08 19:53:02,267 - User did not pick a book, error no book page returned
+werkzeug - INFO - 2019-06-08 19:53:02,269 - 165.124.145.70 - - [08/Jun/2019 19:53:02] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:03,950 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:53:03,950 - Listing genres
+werkzeug - INFO - 2019-06-08 19:53:03,951 - 165.124.145.70 - - [08/Jun/2019 19:53:03] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:06,475 - Top books for Genre accessed
+/home/ubuntu/book_recommendations/application.py - WARNING - 2019-06-08 19:53:06,481 - User did not choose a book, error page returned
+werkzeug - INFO - 2019-06-08 19:53:06,483 - 165.124.145.70 - - [08/Jun/2019 19:53:06] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:07,598 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:53:07,598 - Listing genres
+werkzeug - INFO - 2019-06-08 19:53:07,599 - 165.124.145.70 - - [08/Jun/2019 19:53:07] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:10,232 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:53:10,464 - 165.124.145.70 - - [08/Jun/2019 19:53:10] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - WARNING - 2019-06-08 19:53:12,628 - User did not pick a book, error no book page returned
+werkzeug - INFO - 2019-06-08 19:53:12,628 - 165.124.145.70 - - [08/Jun/2019 19:53:12] "POST /recommendations HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:14,082 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:53:14,082 - Listing genres
+werkzeug - INFO - 2019-06-08 19:53:14,083 - 165.124.145.70 - - [08/Jun/2019 19:53:14] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:16,513 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 19:53:16,755 - 165.124.145.70 - - [08/Jun/2019 19:53:16] "POST /choose_books HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 19:53:40,165 - 165.124.145.70 - - [08/Jun/2019 19:53:40] "GET /choose_books HTTP/1.1" 405 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:42,168 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 19:53:42,168 - Listing genres
+werkzeug - INFO - 2019-06-08 19:53:42,169 - 165.124.145.70 - - [08/Jun/2019 19:53:42] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 19:53:44,153 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 19:53:44,380 - 165.124.145.70 - - [08/Jun/2019 19:53:44] "POST /choose_books HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:10:32,177 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:10:32,178 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:10:32,700 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:10:32,705 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:10:36,693 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:10:36,693 - Listing genres
+werkzeug - INFO - 2019-06-08 21:10:36,698 - 165.124.145.160 - - [08/Jun/2019 21:10:36] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:10:40,670 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:10:40,670 - Listing genres
+werkzeug - INFO - 2019-06-08 21:10:40,671 - 165.124.145.160 - - [08/Jun/2019 21:10:40] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:10:45,878 - 165.124.145.160 - - [08/Jun/2019 21:10:45] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:10:53,123 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:10:53,479 - 165.124.145.160 - - [08/Jun/2019 21:10:53] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:10:58,338 - Recommendation Query Accessed for user 743, 1096, 2034
+werkzeug - INFO - 2019-06-08 21:10:58,358 - 165.124.145.160 - - [08/Jun/2019 21:10:58] "POST /recommendations1 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:10:59,809 - 165.124.145.160 - - [08/Jun/2019 21:10:59] "GET /recommendations2 HTTP/1.1" 405 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:11:18,027 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:11:18,027 - Listing genres
+werkzeug - INFO - 2019-06-08 21:11:18,027 - 54.172.118.182 - - [08/Jun/2019 21:11:18] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:15:00,438 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:15:00,439 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:15:00,972 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:15:00,976 -  * Debugger PIN: 528-891-837
+werkzeug - INFO - 2019-06-08 21:15:04,986 - 165.124.145.160 - - [08/Jun/2019 21:15:04] "GET /recommendations2 HTTP/1.1" 405 -
+werkzeug - INFO - 2019-06-08 21:15:10,303 - 165.124.145.160 - - [08/Jun/2019 21:15:10] "GET /recommendations2 HTTP/1.1" 405 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:15:12,871 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:15:12,872 - Listing genres
+werkzeug - INFO - 2019-06-08 21:15:12,876 - 165.124.145.160 - - [08/Jun/2019 21:15:12] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:15:17,161 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:15:17,475 - 165.124.145.160 - - [08/Jun/2019 21:15:17] "POST /choose_books HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:15:22,699 - 165.124.145.160 - - [08/Jun/2019 21:15:22] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:15:24,634 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:15:24,634 - Listing genres
+werkzeug - INFO - 2019-06-08 21:15:24,634 - 165.124.145.160 - - [08/Jun/2019 21:15:24] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:15:26,734 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:15:26,991 - 165.124.145.160 - - [08/Jun/2019 21:15:26] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:15:32,247 - Recommendation Query Accessed for user 156, 411, 455
+werkzeug - INFO - 2019-06-08 21:15:32,264 - 165.124.145.160 - - [08/Jun/2019 21:15:32] "POST /recommendations1 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:15:39,511 - 165.124.145.160 - - [08/Jun/2019 21:15:39] "GET /recommendations2 HTTP/1.1" 405 -
+werkzeug - INFO - 2019-06-08 21:19:31,599 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:19:31,599 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:19:32,136 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:19:32,140 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:19:38,031 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:19:38,031 - Listing genres
+werkzeug - INFO - 2019-06-08 21:19:38,036 - 165.124.145.160 - - [08/Jun/2019 21:19:38] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:19:42,011 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:19:42,333 - 165.124.145.160 - - [08/Jun/2019 21:19:42] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:19:47,902 - Recommendation Query Accessed for user 78, 156, 308
+werkzeug - INFO - 2019-06-08 21:19:47,921 - 165.124.145.160 - - [08/Jun/2019 21:19:47] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:19:49,991 - Recommendation Query Accessed for user 78, 156, 308
+werkzeug - INFO - 2019-06-08 21:19:50,015 - 165.124.145.160 - - [08/Jun/2019 21:19:50] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:19:56,630 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:19:56,631 - Listing genres
+werkzeug - INFO - 2019-06-08 21:19:56,631 - 165.124.145.160 - - [08/Jun/2019 21:19:56] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:19:59,423 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:19:59,686 - 165.124.145.160 - - [08/Jun/2019 21:19:59] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:20:06,094 - Recommendation Query Accessed for user 1096, 2034, 2696
+werkzeug - INFO - 2019-06-08 21:20:06,103 - 165.124.145.160 - - [08/Jun/2019 21:20:06] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:20:07,266 - Recommendation Query Accessed for user 1096, 2034, 2696
+werkzeug - INFO - 2019-06-08 21:20:07,276 - 165.124.145.160 - - [08/Jun/2019 21:20:07] "GET /recommendations2 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:26:10,876 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:26:10,877 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:26:11,410 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:26:11,415 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:26:16,239 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:16,239 - Listing genres
+werkzeug - INFO - 2019-06-08 21:26:16,244 - 165.124.145.160 - - [08/Jun/2019 21:26:16] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:26:20,210 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:20,210 - Listing genres
+werkzeug - INFO - 2019-06-08 21:26:20,210 - 165.124.145.160 - - [08/Jun/2019 21:26:20] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:26:29,318 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:26:29,638 - 165.124.145.160 - - [08/Jun/2019 21:26:29] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:36,001 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 21:26:36,020 - 165.124.145.160 - - [08/Jun/2019 21:26:36] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:38,131 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 21:26:38,149 - 165.124.145.160 - - [08/Jun/2019 21:26:38] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:39,764 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 21:26:39,782 - 165.124.145.160 - - [08/Jun/2019 21:26:39] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:45,955 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 21:26:45,974 - 165.124.145.160 - - [08/Jun/2019 21:26:45] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:26:55,204 - Recommendation Query Accessed for user 78, 310, 465
+werkzeug - INFO - 2019-06-08 21:26:55,222 - 165.124.145.160 - - [08/Jun/2019 21:26:55] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:27:01,239 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:01,240 - Listing genres
+werkzeug - INFO - 2019-06-08 21:27:01,240 - 165.124.145.160 - - [08/Jun/2019 21:27:01] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:27:04,862 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:27:05,131 - 165.124.145.160 - - [08/Jun/2019 21:27:05] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:12,744 - Recommendation Query Accessed for user 1331, 2696, 3023
+werkzeug - INFO - 2019-06-08 21:27:12,754 - 165.124.145.160 - - [08/Jun/2019 21:27:12] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:14,034 - Recommendation Query Accessed for user 1331, 2696, 3023
+werkzeug - INFO - 2019-06-08 21:27:14,045 - 165.124.145.160 - - [08/Jun/2019 21:27:14] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:16,575 - Recommendation Query Accessed for user 1331, 2696, 3023
+werkzeug - INFO - 2019-06-08 21:27:16,586 - 165.124.145.160 - - [08/Jun/2019 21:27:16] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:19,090 - Recommendation Query Accessed for user 1331, 2696, 3023
+werkzeug - INFO - 2019-06-08 21:27:19,100 - 165.124.145.160 - - [08/Jun/2019 21:27:19] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:20,785 - Recommendation Query Accessed for user 1331, 2696, 3023
+werkzeug - INFO - 2019-06-08 21:27:20,795 - 165.124.145.160 - - [08/Jun/2019 21:27:20] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:27:22,420 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:27:22,420 - Listing genres
+werkzeug - INFO - 2019-06-08 21:27:22,420 - 165.124.145.160 - - [08/Jun/2019 21:27:22] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:31:36,600 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:31:36,600 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:31:37,110 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:31:37,115 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:31:40,686 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:31:40,687 - Listing genres
+werkzeug - INFO - 2019-06-08 21:31:40,691 - 165.124.145.160 - - [08/Jun/2019 21:31:40] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:31:44,667 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:31:44,667 - Listing genres
+werkzeug - INFO - 2019-06-08 21:31:44,667 - 165.124.145.160 - - [08/Jun/2019 21:31:44] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:31:48,277 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:31:48,605 - 165.124.145.160 - - [08/Jun/2019 21:31:48] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:31:54,560 - Recommendation Query Accessed for user 156, 308, 741
+werkzeug - INFO - 2019-06-08 21:31:54,573 - 165.124.145.160 - - [08/Jun/2019 21:31:54] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:31:57,633 - Displaying second Recommendation for user 156, 308, 741
+werkzeug - INFO - 2019-06-08 21:31:57,645 - 165.124.145.160 - - [08/Jun/2019 21:31:57] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:31:59,265 - Recommendation Query Accessed for user 156, 308, 741
+werkzeug - INFO - 2019-06-08 21:31:59,310 - 165.124.145.160 - - [08/Jun/2019 21:31:59] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:00,072 - Recommendation Query Accessed for user 156, 308, 741
+werkzeug - INFO - 2019-06-08 21:32:00,185 - 165.124.145.160 - - [08/Jun/2019 21:32:00] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:00,671 - Recommendation Query Accessed for user 156, 308, 741
+werkzeug - INFO - 2019-06-08 21:32:00,684 - 165.124.145.160 - - [08/Jun/2019 21:32:00] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:32:01,781 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:01,781 - Listing genres
+werkzeug - INFO - 2019-06-08 21:32:01,782 - 165.124.145.160 - - [08/Jun/2019 21:32:01] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:32:25,923 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:32:25,924 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:32:26,436 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:32:26,441 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:32:30,109 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:30,109 - Listing genres
+werkzeug - INFO - 2019-06-08 21:32:30,114 - 165.124.145.160 - - [08/Jun/2019 21:32:30] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:32:34,048 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:32:34,387 - 165.124.145.160 - - [08/Jun/2019 21:32:34] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:42,769 - Recommendation Query Accessed for user 943, 1153, 2923
+werkzeug - INFO - 2019-06-08 21:32:42,789 - 165.124.145.160 - - [08/Jun/2019 21:32:42] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:44,103 - Displaying second Recommendation for user 943, 1153, 2923
+werkzeug - INFO - 2019-06-08 21:32:44,121 - 165.124.145.160 - - [08/Jun/2019 21:32:44] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:32:45,512 - Recommendation Query Accessed for user 943, 1153, 2923
+werkzeug - INFO - 2019-06-08 21:32:45,551 - 165.124.145.160 - - [08/Jun/2019 21:32:45] "GET /recommendations3 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:34:48,206 -  * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+werkzeug - INFO - 2019-06-08 21:34:48,207 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 21:34:48,742 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 21:34:48,746 -  * Debugger PIN: 528-891-837
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:34:52,507 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:34:52,508 - Listing genres
+werkzeug - INFO - 2019-06-08 21:34:52,512 - 165.124.145.160 - - [08/Jun/2019 21:34:52] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:34:57,783 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:34:58,105 - 165.124.145.160 - - [08/Jun/2019 21:34:58] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:05,121 - Recommendation Query Accessed for user 78, 411, 761
+werkzeug - INFO - 2019-06-08 21:35:05,141 - 165.124.145.160 - - [08/Jun/2019 21:35:05] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:06,727 - Displaying second Recommendation for user 78, 411, 761
+werkzeug - INFO - 2019-06-08 21:35:06,745 - 165.124.145.160 - - [08/Jun/2019 21:35:06] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:07,933 - Displaying Third Recommendation for user 78, 411, 761
+werkzeug - INFO - 2019-06-08 21:35:07,949 - 165.124.145.160 - - [08/Jun/2019 21:35:07] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:09,665 - Displaying Fourth Recommendation for user 78, 411, 761
+werkzeug - INFO - 2019-06-08 21:35:09,683 - 165.124.145.160 - - [08/Jun/2019 21:35:09] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:10,691 - Displaying Fifth Recommendation for user 78, 411, 761
+werkzeug - INFO - 2019-06-08 21:35:10,708 - 165.124.145.160 - - [08/Jun/2019 21:35:10] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:12,804 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:12,805 - Listing genres
+werkzeug - INFO - 2019-06-08 21:35:12,805 - 165.124.145.160 - - [08/Jun/2019 21:35:12] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:17,204 - Top books for Genre accessed
+/home/ubuntu/book_recommendations/application.py - WARNING - 2019-06-08 21:35:17,228 - User did not choose a book, error page returned
+werkzeug - INFO - 2019-06-08 21:35:17,231 - 165.124.145.160 - - [08/Jun/2019 21:35:17] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:18,473 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:18,473 - Listing genres
+werkzeug - INFO - 2019-06-08 21:35:18,474 - 165.124.145.160 - - [08/Jun/2019 21:35:18] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:20,918 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:35:21,186 - 165.124.145.160 - - [08/Jun/2019 21:35:21] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:27,862 - Recommendation Query Accessed for user 743, 1331, 4155
+werkzeug - INFO - 2019-06-08 21:35:27,877 - 165.124.145.160 - - [08/Jun/2019 21:35:27] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:29,261 - Displaying second Recommendation for user 743, 1331, 4155
+werkzeug - INFO - 2019-06-08 21:35:29,277 - 165.124.145.160 - - [08/Jun/2019 21:35:29] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:31,799 - Displaying Third Recommendation for user 743, 1331, 4155
+werkzeug - INFO - 2019-06-08 21:35:31,813 - 165.124.145.160 - - [08/Jun/2019 21:35:31] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:32,816 - Displaying Fourth Recommendation for user 743, 1331, 4155
+werkzeug - INFO - 2019-06-08 21:35:32,830 - 165.124.145.160 - - [08/Jun/2019 21:35:32] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:34,054 - Displaying Fifth Recommendation for user 743, 1331, 4155
+werkzeug - INFO - 2019-06-08 21:35:34,070 - 165.124.145.160 - - [08/Jun/2019 21:35:34] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:35,415 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:35,415 - Listing genres
+werkzeug - INFO - 2019-06-08 21:35:35,416 - 165.124.145.160 - - [08/Jun/2019 21:35:35] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:38,179 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:35:38,451 - 165.124.145.160 - - [08/Jun/2019 21:35:38] "POST /choose_books HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:35:43,435 - 165.124.145.160 - - [08/Jun/2019 21:35:43] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:46,581 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:35:46,582 - Listing genres
+werkzeug - INFO - 2019-06-08 21:35:46,582 - 165.124.145.160 - - [08/Jun/2019 21:35:46] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:35:57,325 - Top books for Humor accessed
+werkzeug - INFO - 2019-06-08 21:35:57,572 - 165.124.145.160 - - [08/Jun/2019 21:35:57] "POST /choose_books HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:02,683 - Recommendation Query Accessed for user 743, 1096, 2923
+werkzeug - INFO - 2019-06-08 21:36:02,698 - 165.124.145.160 - - [08/Jun/2019 21:36:02] "POST /recommendations1 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:04,697 - Displaying second Recommendation for user 743, 1096, 2923
+werkzeug - INFO - 2019-06-08 21:36:04,711 - 165.124.145.160 - - [08/Jun/2019 21:36:04] "GET /recommendations2 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:06,739 - Displaying Third Recommendation for user 743, 1096, 2923
+werkzeug - INFO - 2019-06-08 21:36:06,753 - 165.124.145.160 - - [08/Jun/2019 21:36:06] "GET /recommendations3 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:07,462 - Displaying Fourth Recommendation for user 743, 1096, 2923
+werkzeug - INFO - 2019-06-08 21:36:07,476 - 165.124.145.160 - - [08/Jun/2019 21:36:07] "GET /recommendations4 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:07,911 - Displaying Fifth Recommendation for user 743, 1096, 2923
+werkzeug - INFO - 2019-06-08 21:36:07,925 - 165.124.145.160 - - [08/Jun/2019 21:36:07] "GET /recommendations5 HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:36:08,542 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:08,542 - Listing genres
+werkzeug - INFO - 2019-06-08 21:36:08,542 - 165.124.145.160 - - [08/Jun/2019 21:36:08] "GET / HTTP/1.1" 200 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:36:44,449 - At first page: choose_genre
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:36:44,449 - Listing genres
+werkzeug - INFO - 2019-06-08 21:36:44,449 - 174.221.10.26 - - [08/Jun/2019 21:36:44] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:36:44,807 - 174.221.10.26 - - [08/Jun/2019 21:36:44] "GET /static/background_pic.jpg HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:36:44,880 - 174.221.10.26 - - [08/Jun/2019 21:36:44] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - INFO - 2019-06-08 21:36:51,427 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 21:36:51,712 - 174.221.10.26 - - [08/Jun/2019 21:36:51] "POST /choose_books HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:36:51,887 - 174.221.10.26 - - [08/Jun/2019 21:36:51] "GET /favicon.ico HTTP/1.1" 404 -
+/home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-08 21:37:02,010 - Recommendation Query Accessed for user 78, 156, 310
+werkzeug - INFO - 2019-06-08 21:37:02,026 - 174.221.10.26 - - [08/Jun/2019 21:37:02] "POST /recommendations1 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 21:37:02,498 - 174.221.10.26 - - [08/Jun/2019 21:37:02] "GET /favicon.ico HTTP/1.1" 404 -
