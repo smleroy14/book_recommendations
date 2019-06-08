@@ -21,6 +21,7 @@ logger = logging.getLogger(__file__)
 db = SQLAlchemy(app)
 
 genre = ''
+user_id = ''
 
 @app.route('/')
 def intro_page():
@@ -50,7 +51,7 @@ def add_genre():
         logger.warning("User did not choose a book, error page returned")
         return render_template('error-nogenre.html')
 
-@app.route('/recommendations', methods=['POST'])
+@app.route('/recommendations1', methods=['POST'])
 def get_recs():
     """View that process a POST with book choice inputs and displays recommendations, queried from DB.
     Returns: rendered html template
@@ -72,15 +73,31 @@ def get_recs():
     #sort user choices in order to create user id 
     user_choice_list = [firstbook, secondbook, thirdbook]
     user_choice_list.sort()
+    global user_id = ''
     user_id = str(user_choice_list[0]) + ', ' + str(user_choice_list[1]) + ', ' + str(user_choice_list[2])
     try:
         recs = db.session.query(Book_Recommendations).filter_by(user=user_id)
         logger.debug("Recommendation Query Accessed for user %s", user_id)
-        return render_template('recommendations.html', recs = recs)
+        return render_template('recommendations1.html', recs = recs)
     except:
         traceback.print_exc()
         logger.warning("Not able to display recommendations, error page returned")
         return render_template('error-generic.html')
+
+@app.route('/recommendations2', methods=['POST'])
+def get_recs2():
+    """View that process a POST with book choice inputs and displays recommendations, queried from DB.
+    Returns: rendered html template
+    """
+    try:
+        recs = db.session.query(Book_Recommendations).filter_by(user=user_id)
+        logger.debug("Recommendation Query Accessed for user %s", user_id)
+        return render_template('recommendations2.html', recs = recs)
+    except:
+        traceback.print_exc()
+        logger.warning("Not able to display recommendations, error page returned")
+        return render_template('error-generic.html')
+
 
 if __name__ == "__main__":
     	

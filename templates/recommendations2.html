@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap">
+    <style>
+      body {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+        background-image: url('static/background_pic.jpg');
+        min-height: 100%;
+        background-position: top;
+        background-size: cover;
+      }
+    </style>
+  </head>
+<body>
+<div id="container" align="center">
+  <div class="main">
+    <br>
+    <br>
+    <heading>Book it to the Library</heading>
+    <br>
+    <br>
+    <mainheading>A Book Recommendation App</mainheading>
+    <br>
+    <br>
+    <text> Here is your recommendation! Have fun reading! </text>
+    <hr style="width:40%">
+    <p>
+      <div align="center" >
+	      <text> Title: </text>
+	      <text> {{recs[0].title2}} </text>
+	      <br>
+	      <text> Author: </text>
+	      <text> {{recs[0].author2}} </text>
+	      <br>
+	      <br>
+	      <img src={{recs[0].cover2}}>
+      </div>
+    <form action="{{ url_for('intro_page')}}">
+    <p align="center">
+            <button type="submit" style="color:black;" > Start Over </button>
+            </p> </form>
+        </div>
+    </div>
+    </body>
+    </html>
+
