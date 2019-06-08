@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap">
+    <style>
+      body {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+      }
+    </style>
+</head>
+<body>
+<div id="container" align="center">
+  <div class="main">
+    <br>
+    <br>
+    <heading>Book it to the Library</heading>
+    <br>
+    <mainheading>A Book Recommendation App</mainheading>
+    <br>
+    <br>
+    <typeheading> Here are the top 20 most popular books for the genre {{genre}}. Please choose 3 different books</typeheading>
+      
+    <form class=inputs method=post name=userinput action="{{ url_for('get_recs')}}">
+      <p>
+      <div align="center">
+        <select name="bookchoice1" id="book1" class="form-control unstyled">
+            <option>
+                First Book
+            </option>
+	    <option value={{top_books[0].book_id}} >1: {{top_books[0].title}}</option>
+            <option value={{top_books[1].book_id}} >2: {{top_books[1].title}}</option>
+            <option value={{top_books[2].book_id}} >3: {{top_books[2].title}}</option>
+            <option value={{top_books[3].book_id}} >4: {{top_books[3].title}}</option>
+            <option value={{top_books[4].book_id}} >5: {{top_books[4].title}}</option>
+            <option value={{top_books[5].book_id}} >6: {{top_books[5].title}}</option>
+            <option value={{top_books[6].book_id}} >7: {{top_books[6].title}}</option>
+            <option value={{top_books[7].book_id}} >8: {{top_books[7].title}}</option>
+            <option value={{top_books[8].book_id}} >9: {{top_books[8].title}}</option>
+            <option value={{top_books[9].book_id}} >10: {{top_books[9].title}}</option>
+            <option value={{top_books[10].book_id}} >11: {{top_books[10].title}}</option>
+            <option value={{top_books[11].book_id}} >12: {{top_books[11].title}}</option>
+            <option value={{top_books[12].book_id}} >13: {{top_books[12].title}}</option>
+            <option value={{top_books[13].book_id}} >14: {{top_books[13].title}}</option>
+            <option value={{top_books[14].book_id}} >15: {{top_books[14].title}}</option>
+            <option value={{top_books[15].book_id}} >16: {{top_books[15].title}}</option>
+            <option value={{top_books[16].book_id}} >17: {{top_books[16].title}}</option>
+            <option value={{top_books[17].book_id}} >18: {{top_books[17].title}}</option>
+            <option value={{top_books[18].book_id}} >19: {{top_books[18].title}}</option>
+            <option value={{top_books[19].book_id}} >20: {{top_books[19].title}}</option>
+        </select>
+      </div>
+    <div align="center">
+        <select name="bookchoice2" id="book2" class="form-control unstyled">
+            <option>
+                Second Book
+            </option>
+            <option value={{top_books[0].book_id}} >1: {{top_books[0].title}}</option>
+            <option value={{top_books[1].book_id}} >2: {{top_books[1].title}}</option>
+            <option value={{top_books[2].book_id}} >3: {{top_books[2].title}}</option>
+            <option value={{top_books[3].book_id}} >4: {{top_books[3].title}}</option>
+            <option value={{top_books[4].book_id}} >5: {{top_books[4].title}}</option>
+            <option value={{top_books[5].book_id}} >6: {{top_books[5].title}}</option>
+            <option value={{top_books[6].book_id}} >7: {{top_books[6].title}}</option>
+            <option value={{top_books[7].book_id}} >8: {{top_books[7].title}}</option>
+            <option value={{top_books[8].book_id}} >9: {{top_books[8].title}}</option>
+            <option value={{top_books[9].book_id}} >10: {{top_books[9].title}}</option>
+            <option value={{top_books[10].book_id}} >11: {{top_books[10].title}}</option>
+            <option value={{top_books[11].book_id}} >12: {{top_books[11].title}}</option>
+            <option value={{top_books[12].book_id}} >13: {{top_books[12].title}}</option>
+            <option value={{top_books[13].book_id}} >14: {{top_books[13].title}}</option>
+            <option value={{top_books[14].book_id}} >15: {{top_books[14].title}}</option>
+            <option value={{top_books[15].book_id}} >16: {{top_books[15].title}}</option>
+            <option value={{top_books[16].book_id}} >17: {{top_books[16].title}}</option>
+            <option value={{top_books[17].book_id}} >18: {{top_books[17].title}}</option>
+            <option value={{top_books[18].book_id}} >19: {{top_books[18].title}}</option>
+            <option value={{top_books[19].book_id}} >20: {{top_books[19].title}}</option>
+        </select>
+    <div>
+    <div align="center">
+        <select name="bookchoice3" id="book3" class="form-control unstyled">
+            <option>
+                Third Book
+            </option>
+            <option value={{top_books[0].book_id}} >1: {{top_books[0].title}}</option>
+            <option value={{top_books[1].book_id}} >2: {{top_books[1].title}}</option>
+            <option value={{top_books[2].book_id}} >3: {{top_books[2].title}}</option>
+            <option value={{top_books[3].book_id}} >4: {{top_books[3].title}}</option>
+            <option value={{top_books[4].book_id}} >5: {{top_books[4].title}}</option>
+            <option value={{top_books[5].book_id}} >6: {{top_books[5].title}}</option>
+            <option value={{top_books[6].book_id}} >7: {{top_books[6].title}}</option>
+            <option value={{top_books[7].book_id}} >8: {{top_books[7].title}}</option>
+            <option value={{top_books[8].book_id}} >9: {{top_books[8].title}}</option>
+            <option value={{top_books[9].book_id}} >10: {{top_books[9].title}}</option>
+            <option value={{top_books[10].book_id}} >11: {{top_books[10].title}}</option>
+            <option value={{top_books[11].book_id}} >12: {{top_books[11].title}}</option>
+            <option value={{top_books[12].book_id}} >13: {{top_books[12].title}}</option>
+            <option value={{top_books[13].book_id}} >14: {{top_books[13].title}}</option>
+            <option value={{top_books[14].book_id}} >15: {{top_books[14].title}}</option>
+            <option value={{top_books[15].book_id}} >16: {{top_books[15].title}}</option>
+            <option value={{top_books[16].book_id}} >17: {{top_books[16].title}}</option>
+            <option value={{top_books[17].book_id}} >18: {{top_books[17].title}}</option>
+            <option value={{top_books[18].book_id}} >19: {{top_books[18].title}}</option>
+            <option value={{top_books[19].book_id}} >20: {{top_books[19].title}}</option>
+        </select>
+    <div>
+      <p align="center">
+        <button type="submit" style="color:black;" > See my Recommendations! </button> 
+        </p> </form>
+    </div>
+</div>
+</body>
+</html>

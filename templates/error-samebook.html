@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap">
+    <style>
+      body {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+      }
+    </style>
+</head>
+<body>
+<div id="container" align="center">
+  <div class="main">
+    <br>
+    <br>
+    <heading>Book it to the Library</heading>
+    <br>
+    <mainheading>A Book Recommendation App</mainheading>
+    <br>
+    <br>
+    <typeheading> Two or more of your book choices were the same. </typeheading> 
+    <typeheading> Please choose a genre and then choose 3 DIFFERENT books </typeheading>
+    <form action="{{ url_for('intro_page')}}">
+    <p align="center">
+            <button type="submit" style="color:black;" > Choose Books </button> 
+            </p> </form>
+        </div>
+    </div>
+    </body>
+    </html>

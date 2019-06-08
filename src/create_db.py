@@ -41,7 +41,9 @@ class Book_Recommendations(Base):
     cover5 = Column(String(200), unique=False, nullable=False) #the url that will show the picture of the cover of the book recommended
 
     def __repr__(self):
-        return '<Book_Recommendations %r>' % self.Book_Cover
+        recs_repr = "<Book_Recommendations(user='%s', genre = '%s', author1='%s', title1='%s', cover1='%s',  author2='%s', title2='%s', cover2='%s', author3='%s', title3='%s', cover3='%s',  author4='%s', title4='%s', cover4='%s',  author5='%s', title5='%s', cover5='%s')>"
+        return recs_repr %(self.user, self.genre, self.author1, self.title1, self.cover1,  self.author2, self.title2, self.cover2, self.author3, self.title3, self.cover3,  self.author4, self.title4, self.cover4, self.author5, self.title5, self.cover5)
+
 
 
 class Top_Books(Base):
@@ -57,7 +59,7 @@ class Top_Books(Base):
 
     def __repr__(self):
         top_books_repr = "<Top_Books(book_id='%d', author='%s', title='%s')>"
-        return top_ten_beers_repr %(self.book_id, self.author, self.title)
+        return top_books_repr %(self.book_id, self.author, self.title)
 
 
 def create_db(SQL_URI=None):

@@ -25,14 +25,15 @@
     <br>
     <text> To get started, choose a genre! </text>
     <hr style="width:40%">
-    <form class=inputs method=post name=userinput action="{{ url_for('intro_page')}}">
+    <form class=inputs method=post name=userinput action="{{ url_for('add_genre')}}">
     <p>
       <div align="center" >
-        <select name="beertype" id="beertype" class="form-control unstyled">
+        <select name="genre" id="genre" class="form-control unstyled">
             <option>
                 Genre
             </option>
 	    <option value="Chick-lit" >Chick-lit</option>
+	    <option value="Humor" >Humor</option>
         </select>
       </div>
       <p align="center">
