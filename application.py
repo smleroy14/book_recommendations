@@ -57,11 +57,8 @@ def get_recs():
     """
     try:
         firstbook = int(request.form['bookchoice1'])
-        print(firstbook)
         secondbook = int(request.form['bookchoice2'])
-        print(secondbook)
         thirdbook = int(request.form['bookchoice3'])
-        print(thirdbook)
     except:
         traceback.print_exc()
         logger.warning("User did not pick a book, error no book page returned")
@@ -72,12 +69,14 @@ def get_recs():
         return render_template('error-samebooks.html')
     if firstbook==thirdbook:
         return render_template('error-samebooks.html')
-    user_id = str(firstbook) + ', ' + str(secondbook) + ', ' + str(thirdbook)
-    print(user_id)
+    #sort user choices in order to create user id 
+    user_choice_list = [firstbook, secondbook, thirdbook]
+    user_choice_list.sort()
+    user_id = str(user_choice_list[0]) + ', ' + str(user_choice_list[1]) + ', ' + str(user_choice_list[2])
     try:
         recs = db.session.query(Book_Recommendations).filter_by(user=user_id)
         logger.debug("Recommendation Query Accessed for user %s", user_id)
-        return render_template('recommendations.html', rec = recs)
+        return render_template('recommendations.html', recs = recs)
     except:
         traceback.print_exc()
         logger.warning("Not able to display recommendations, error page returned")
