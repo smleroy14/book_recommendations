@@ -1,0 +1,6 @@
+Genre: Chick-lit
+Precision: 0.9719748690566448
+Recall: 0.5361607483974351
+Genre: History
+Precision: 0.9279802766160502
+Recall: 0.5612858729547553

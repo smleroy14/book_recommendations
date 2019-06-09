@@ -65,45 +65,17 @@ The second measurement of user performance will be user engagement. How often do
 This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
 
 ## Running the application 
-### 1. Set up environment 
-
-The `requirements.txt` file contains the packages required to run the model code. An environment can be set up following the instructions below. 
-
-#### With `virtualenv`
+### 1. To get the predictions that will populate the database, run: 
 
 ```bash
-pip install virtualenv
-
-virtualenv book_recs
-
-source book_recs/bin/activate
-
-pip install -r requirements.txt
-
+make all
 ```
-
-### 2. Source the data from the public S3 bucket:
-
-`src/get_data.py` gets the raw data files from the public S3 bucket 
-
-Run the following command:
-
-```python
-python src/get_data.py
-```
-The data files are now in data/raw_from_s3/
-
-To upload these data files to your own S3 bucket, run:
-
-```bash
-python src/load_data_s3.py --local_file="local file name" --bucket="bucket_name" --s3_file='name for file in s3'
-```
-Run this command separately for each file you would like to upload.
 
 ** Note: The user will need to have an AWS bucket along with a key
 
+**Note: To change inputs, outputs, or the config file in use, please edit the Makefile
 
-### 3. Create an RDS database:
+### 2. Create an RDS database:
 Fill in the config/dbconfig file with the following: 
 
 MYSQL_USER=""
@@ -123,21 +95,34 @@ echo 'source config/dbconfig' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Note: You have been kicked off your virtual environment after running the source command 
-You need to rerun 
+Note: You have been kicked off the virtual environment that was made using the Makefile after running the source command
+ 
+You need to run 
 
 ```bash
-source book_recs/bin/activate
+source book-env/bin/activate
 ```
 
 Finally, to create the RDS database with these configurations, run: 
 
-`python src/create_db.py --rds=True`
+`python src/create_db.py`
 
-### 4. Create a sqllite database:
+To add the data to this RDS database, run:
+`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations'
+
+`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books' 
+
+
+### 3. If you instead want a local database, create a sqllite database:
  
  ```bash
- python src/create_db.py --rds=False
+ python src/create_db.py --SQL_URI=sqlite:///data/database.db
  ```
  
- 
+To add data to the sqllite database, run: 
+
+`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations --SQL_URI=sqlite:///data/database.db'
+
+`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books --SQL_URI=sqlite:///data/database.db'
+
+

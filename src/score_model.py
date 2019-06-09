@@ -53,25 +53,39 @@ def precision_recall_at_k(predictions, k=10, threshold=3):
     return precisions, recalls
 
 def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfolds = 5):
-	data = df[df['genre'==genre]]
-	data = data[['user_id','book_id','rating']]
-	reader = Reader(rating_scale=(1, 5))
-	data = Dataset.load_from_df(data[['user_id', 'book_id', 'rating']], reader)
-	algo_KNNbasic = KNNBasic(k = neighbors, min_k = min_neighbors, random_state = seed)
+        data = df[df['genre']==genre]
+        data = data[['user_id','book_id','rating']]
+        reader = Reader(rating_scale=(1, 5))
+        data = Dataset.load_from_df(data[['user_id', 'book_id', 'rating']], reader)
+        algo_KNNbasic = KNNBasic(k = neighbors, min_k = min_neighbors, random_state = seed)
 
-	kf = KFold(n_splits=kfolds)
-	for trainset, testset in kf.split(data):
-	    algo_KNNbasic.fit(trainset)
-	    predictions = algo_KNNbasic.test(testset)
-	    precisions, recalls = precision_recall_at_k(predictions, k=5, threshold=4)
+        kf = KFold(n_splits=kfolds,random_state=seed)
+        prec_list = []
+        recalls_list = []
+        for trainset, testset in kf.split(data):
+            algo_KNNbasic.fit(trainset)
+            predictions = algo_KNNbasic.test(testset)
+            precisions, recalls = precision_recall_at_k(predictions, k=5, threshold=4)
 
 	    # Precision and recall can then be averaged over all users
-	    logger.info("Precision:")
-	    logger.info(sum(prec for prec in precisions.values()) / len(precisions))
-	    logger.info("Accuracy")
-	    logger.info(sum(rec for rec in recalls.values()) / len(recalls))
+            logger.info("Precision:")
+            logger.info(sum(prec for prec in precisions.values()) / len(precisions))
+            precision = (sum(prec for prec in precisions.values()) / len(precisions))
+            logger.info("Recall")
+            logger.info(sum(rec for rec in recalls.values()) / len(recalls))
+            recall = (sum(rec for rec in recalls.values()) / len(recalls))
+            prec_list.append(precision)
+            recalls_list.append(recall)
 
-def run_score_model():
+        prec = (sum(prec_list) / len(prec_list))
+        rec = (sum(recalls_list) / len(recalls_list))
+ 
+        text_file = open(args.output, "a")
+        text_file.write("Genre: %s\r\n" % genre)
+        text_file.write("Precision: %s\r\n" % prec)
+        text_file.write("Recall: %s\r\n" % rec)
+        
+def run_score_model(args):
     """Orchestrates getting the data from config file arguments."""
 
     with open(args.config, "r") as f:
@@ -82,14 +96,16 @@ def run_score_model():
 
     if args.input is not None:
         df = pd.read_csv(args.input)
-        logger.info(""Features for input into model loaded from %s", args.input)
+        logger.info("Features for input into model loaded from %s", args.input)
     else:
         raise ValueError("Path to CSV for input data must be provided through --input in order to score the model.")
 
+    text_file = open(args.output, "w")
+  
     for genre in genres:
-        logger.info("calculating precision and recall for %s, genre)
+        logger.info("calculating precision and recall for %s", genre)
         get_accuracy(df, genre, **config_try['get_accuracy'])
-     
+    text_file.close()   
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Score the models")
@@ -97,6 +113,8 @@ if __name__ == "__main__":
                         help="Path to the test configuration file")
     parser.add_argument("--input", "-i", default="data/books_w_genres.csv",
                         help="Path to input data for scoring")
+    parser.add_argument("--output", "-o", default="data/model_accuracy.txt",
+                        help="Path to save model accuracy")
     args = parser.parse_args()
 
     run_score_model(args)

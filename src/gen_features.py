@@ -65,16 +65,17 @@ def get_genre_rating_dfs(df, ratings_csv):
     books_w_genres = books_w_genres.merge(ratings, how='left', on='book_id')
     return books_w_genres
 
-def run_gen_features():
+def run_gen_features(args):
     """Orchestrates getting the data from config file arguments."""
     
     with open(args.config, "r") as f:
         config = yaml.load(f)
     config_try = config['gen_features']
 
+    bucket_name = args.input
     path = args.output
 
-    download_from_S3(**config_try['download_from_S3'])
+    download_from_S3(bucket_name, **config_try['download_from_S3'])
     book_tags_w_names = get_books_df(**config_try['get_books_df'])
     books_w_genres = get_genres(book_tags_w_names, **config_try['get_genres'])
     books_w_genres = drop_genre(books_w_genres, **config_try['drop_genre'])
@@ -86,6 +87,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict books for new users")
     parser.add_argument("--config", "-c", default="config.yml",
                         help="Path to the test configuration file")
+    parser.add_argument("--input", "-i", default="michel-avc-project-private",
+			help="s3 bucket with data")
     parser.add_argument("--output", "-o",  default="data/books_w_genres.csv",
                         help="Path to save dataframe to input into model")
     args = parser.parse_args()

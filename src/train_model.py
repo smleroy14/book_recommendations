@@ -80,12 +80,6 @@ def train_model(new_users, data, neighbors = 30, min_neighbors = 5, seed = 12345
 	algo = KNNBasic(k=neighbors, min_k=min_neighbors, random_state=seed)
 	algo.fit(trainset)
         
-	# Save the trained model object
-	#if save_tmo is not None:
-        #	with open(save_tmo, "wb") as f:
-        #        	pickle.dump(model, f)
-        # 	logger.info("Trained model object saved to %s", save_tmo)
-
 	# predict all the cells without values
 	testset = trainset.build_anti_testset()
 	predictions = algo.test(testset)

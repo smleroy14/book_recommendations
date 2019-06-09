@@ -1,5 +1,6 @@
 config/.mysqlconfig
 data/raw_from_s3/*.csv
 data/*.csv
-data/*.pkl
 data/raw_private_s3/*.csv
+data/*.db
+book-env*

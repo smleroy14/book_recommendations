@@ -6,30 +6,27 @@ model:
   dependencies: requirements.txt
 get_data:
   download_from_S3:
-    bucket_name: "michel-avc-project"
     s3_file_names: ["raw/books.csv", "raw/book_tags.csv", "raw/ratings.csv", "raw/tags.csv", "raw/to_read.csv"]
-    local_file_names: ["data/raw_from_s3/books.csv", "data/raw_from_s3/book_tags.csv", "data/raw_from_s3/ratings.csv", "data/raw_from_s3/tags.csv", "data/raw_from_s3/to_read.csv"]
+    local_file_names: ["books.csv", "book_tags.csv", "ratings.csv", "tags.csv", "to_read.csv"]
 load_data_s3:
   write_to_S3: 
-    local_file_names: ["data/raw_from_s3/books.csv", "data/raw_from_s3/book_tags.csv", "data/raw_from_s3/ratings.csv", "data/raw_from_s3/tags.csv", "data/raw_from_s3/to_read.csv"]
-    bucket_name: "michel-avc-project-private"
+    local_file_names: ["books.csv", "book_tags.csv", "ratings.csv", "tags.csv", "to_read.csv"]
     s3_file_names: ["raw/books.csv", "raw/book_tags.csv", "raw/ratings.csv", "raw/tags.csv", "raw/to_read.csv"]
 gen_features:
   download_from_S3:
-    bucket_name: "michel-avc-project-private"
+    save_path: "data/raw_private_s3/"
     s3_file_names:  ["raw/books.csv", "raw/book_tags.csv", "raw/ratings.csv", "raw/tags.csv", "raw/to_read.csv"]
-    local_file_names: ["data/raw_private_s3/books.csv", "data/raw_private_s3/book_tags.csv", "data/raw_private_s3/ratings.csv", "data/raw_private_s3/tags.csv", "data/raw_private_s3/to_read.csv"]
+    local_file_names: ["books.csv", "book_tags.csv", "ratings.csv", "tags.csv", "to_read.csv"]
   get_books_df:
     csv_dict: {'book_tags': 'data/raw_private_s3/book_tags.csv', 'tags_xwalk' : 'data/raw_private_s3/tags.csv', 'books' : 'data/raw_private_s3/books.csv'}
   get_genres:
     genre_dict: { 'Fiction' : ['fiction', 'adult-fiction', 'general-fiction'] , 'Fantasy' : ['fantasy', 'magic'], 'Young Adult': ['young-adult', 'ya', 'teen'], 'Classics' : ['classics', 'literature'], 'Romance': ['romance'], 'Mystery': ['mystery', 'thriller', 'crime', 'suspense'], 'Non-Fiction': ['non-fiction', 'nonfiction'], 'Biography': ['memoir', 'biography'], 'History': ['historical', 'history'], 'Historical Fiction' : ['historical-fiction'], 'Science Fiction': ['sci-fi', 'sci-fi-fantasy'], 'Childrens' : ['childrens', 'children-s', 'kids', 'children-s-books'], 'Graphic Novel': ['graphic-novels', 'comics', 'graphic-novel'], 'Adventure': ['adventure'], 'Dystopian': ['dystopian', 'dystopia'], 'Chick-lit': ['chick-lit'], 'Humor' : ['humor']}
   drop_genre: 
-    genres_to_drop: ['Adventure', 'Romance']
+    genres_to_drop: ['Adventure', 'Romance', 'Humor']
   get_genre_rating_dfs:
     ratings_csv: "data/raw_from_s3/ratings.csv"
-    save_file_path: "data/books_w_genres.csv"
 train_model:
-  genres: ["Chick-lit", "Humor"]
+  genres: ["Chick-lit", "History"]
   get_combo_df:
     num_choices: 20
     num_picks: 3
@@ -41,7 +38,7 @@ train_model:
     n_start: 17
     n_end: 22
 score_model:
-  genres: ['Chick-lit', 'Humor']
+  genres: ['Chick-lit', 'History']
   get_accuracy:
     neighbors: 30
     min_neighbors: 5

@@ -10,7 +10,7 @@ logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.D
 logger = logging.getLogger(__file__)
 
 # upload raw data to configurable S3 bucket
-def write_to_S3(local_file_names, bucket_name, s3_file_names):
+def write_to_S3(bucket_name, file_path, local_file_names, s3_file_names):
 
     """
     Upload Files to S3
@@ -20,7 +20,7 @@ def write_to_S3(local_file_names, bucket_name, s3_file_names):
     :param s3_file_name: The name for the file in the S3 bucket
     """
     for i in range(len(local_file_names)):
-        local_file = local_file_names[i]
+        local_file = file_path + local_file_names[i]
         s3_file = s3_file_names[i]
         try:
             s3 = boto3.resource('s3')
@@ -31,8 +31,22 @@ def write_to_S3(local_file_names, bucket_name, s3_file_names):
             sys.exit(1)
 
 if __name__ == "__main__":
-    with open("config.yml", "r") as f:
+
+    parser = argparse.ArgumentParser(description="Predict books for new users")
+    parser.add_argument("--config", "-c", default="config.yml",
+                        help="Path to the test configuration file")
+    parser.add_argument("--input", "-i", default="michel-avc-project",
+                        help="The S3 bucket with the data")
+    parser.add_argument("--output", "-o",  default="data/raw_from_s3",
+                        help="The file path to save the data")
+    args = parser.parse_args()
+
+    with open(args.config, "r") as f:
         config = yaml.load(f)
     config_try = config['load_data_s3']
-    write_to_S3(**config_try['write_to_S3'])
+
+    file_path = args.input
+    bucket_name = args.output
+
+    write_to_S3(bucket_name, file_path, **config_try['write_to_S3'])
 
