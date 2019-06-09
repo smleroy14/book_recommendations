@@ -11605,3 +11605,92 @@ werkzeug - INFO - 2019-06-09 03:04:04,155 - 165.124.145.160 - - [09/Jun/2019 03:
 werkzeug - INFO - 2019-06-09 03:04:13,929 - 165.124.145.160 - - [09/Jun/2019 03:04:13] "GET / HTTP/1.1" 200 -
 /home/ubuntu/book_recommendations/application.py - DEBUG - 2019-06-09 03:04:23,087 - Displaying Third Recommendation for user 366, 687, 2174
 werkzeug - INFO - 2019-06-09 03:04:23,098 - 35.165.130.177 - - [09/Jun/2019 03:04:23] "GET /recommendations3 HTTP/1.1" 200 -
+werkzeug - INFO - 2019-06-08 22:10:42,295 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 22:10:44,034 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 22:10:44,043 -  * Debugger PIN: 125-904-162
+werkzeug - INFO - 2019-06-08 22:10:44,057 -  * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:10:48,093 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:10:48,102 - 127.0.0.1 - - [08/Jun/2019 22:10:48] "GET / HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:10:52,232 - Top books for History accessed
+werkzeug - INFO - 2019-06-08 22:10:52,527 - 127.0.0.1 - - [08/Jun/2019 22:10:52] "POST /choose_books HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:10:57,622 - Recommendation Query Accessed for user 150, 646, 1404
+werkzeug - INFO - 2019-06-08 22:10:57,643 - 127.0.0.1 - - [08/Jun/2019 22:10:57] "POST /recommendations1 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:10:59,093 - Displaying second Recommendation for user 150, 646, 1404
+werkzeug - INFO - 2019-06-08 22:10:59,115 - 127.0.0.1 - - [08/Jun/2019 22:10:59] "GET /recommendations2 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:11:01,213 - Displaying Third Recommendation for user 150, 646, 1404
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - WARNING - 2019-06-08 22:11:01,251 - Not able to display recommendations3, error page returned
+werkzeug - INFO - 2019-06-08 22:11:01,253 - 127.0.0.1 - - [08/Jun/2019 22:11:01] "GET /recommendations3 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:11:04,048 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:11:04,050 - 127.0.0.1 - - [08/Jun/2019 22:11:04] "GET / HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:11:07,577 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 22:11:07,660 - 127.0.0.1 - - [08/Jun/2019 22:11:07] "POST /choose_books HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:11:14,107 - Recommendation Query Accessed for user 78, 308, 411
+werkzeug - INFO - 2019-06-08 22:11:14,117 - 127.0.0.1 - - [08/Jun/2019 22:11:14] "POST /recommendations1 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:11:16,964 - Displaying second Recommendation for user 78, 308, 411
+werkzeug - INFO - 2019-06-08 22:11:16,990 - 127.0.0.1 - - [08/Jun/2019 22:11:16] "GET /recommendations2 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:11:18,030 - Displaying Third Recommendation for user 78, 308, 411
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - WARNING - 2019-06-08 22:11:18,038 - Not able to display recommendations3, error page returned
+werkzeug - INFO - 2019-06-08 22:11:18,040 - 127.0.0.1 - - [08/Jun/2019 22:11:18] "GET /recommendations3 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:11:20,651 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:11:20,652 - 127.0.0.1 - - [08/Jun/2019 22:11:20] "GET / HTTP/1.1" 200 -
+sqlalchemy.pool.impl.NullPool - ERROR - 2019-06-08 22:12:02,872 - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\pool\base.py", line 680, in _finalize_fairy
+    fairy._reset(pool)
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\pool\base.py", line 867, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\default.py", line 500, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 17780 and this is thread id 21344.
+sqlalchemy.pool.impl.NullPool - ERROR - 2019-06-08 22:12:02,874 - Exception closing connection <sqlite3.Connection object at 0x147A40A0>
+Traceback (most recent call last):
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\pool\base.py", line 680, in _finalize_fairy
+    fairy._reset(pool)
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\pool\base.py", line 867, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\default.py", line 500, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 17780 and this is thread id 21344.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\pool\base.py", line 270, in _close_connection
+    self._dialect.do_close(connection)
+  File "C:\Users\smler\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sqlalchemy\engine\default.py", line 506, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 17780 and this is thread id 21344.
+werkzeug - INFO - 2019-06-08 22:16:33,599 -  * Restarting with stat
+werkzeug - WARNING - 2019-06-08 22:16:37,887 -  * Debugger is active!
+werkzeug - INFO - 2019-06-08 22:16:37,910 -  * Debugger PIN: 125-904-162
+werkzeug - INFO - 2019-06-08 22:16:37,940 -  * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:16:40,372 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:16:40,389 - 127.0.0.1 - - [08/Jun/2019 22:16:40] "GET / HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:16:44,157 - Top books for Chick-lit accessed
+werkzeug - INFO - 2019-06-08 22:16:44,431 - 127.0.0.1 - - [08/Jun/2019 22:16:44] "POST /choose_books HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:16:49,409 - Recommendation Query Accessed for user 78, 308, 455
+werkzeug - INFO - 2019-06-08 22:16:49,421 - 127.0.0.1 - - [08/Jun/2019 22:16:49] "POST /recommendations1 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:16:51,264 - Displaying second Recommendation for user 78, 308, 455
+werkzeug - INFO - 2019-06-08 22:16:51,304 - 127.0.0.1 - - [08/Jun/2019 22:16:51] "GET /recommendations2 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:16:52,562 - Displaying Third Recommendation for user 78, 308, 455
+werkzeug - INFO - 2019-06-08 22:16:52,594 - 127.0.0.1 - - [08/Jun/2019 22:16:52] "GET /recommendations3 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:16:53,562 - Displaying Fourth Recommendation for user 78, 308, 455
+werkzeug - INFO - 2019-06-08 22:16:53,580 - 127.0.0.1 - - [08/Jun/2019 22:16:53] "GET /recommendations4 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:16:54,338 - Displaying Fifth Recommendation for user 78, 308, 455
+werkzeug - INFO - 2019-06-08 22:16:54,362 - 127.0.0.1 - - [08/Jun/2019 22:16:54] "GET /recommendations5 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:16:55,295 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:16:55,296 - 127.0.0.1 - - [08/Jun/2019 22:16:55] "GET / HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:17:13,567 - Top books for History accessed
+werkzeug - INFO - 2019-06-08 22:17:13,652 - 127.0.0.1 - - [08/Jun/2019 22:17:13] "POST /choose_books HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:17:20,378 - Recommendation Query Accessed for user 150, 870, 1595
+werkzeug - INFO - 2019-06-08 22:17:20,405 - 127.0.0.1 - - [08/Jun/2019 22:17:20] "POST /recommendations1 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:17:21,861 - Displaying second Recommendation for user 150, 870, 1595
+werkzeug - INFO - 2019-06-08 22:17:21,886 - 127.0.0.1 - - [08/Jun/2019 22:17:21] "GET /recommendations2 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:17:22,946 - Displaying Third Recommendation for user 150, 870, 1595
+werkzeug - INFO - 2019-06-08 22:17:22,964 - 127.0.0.1 - - [08/Jun/2019 22:17:22] "GET /recommendations3 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:17:23,743 - Displaying Fourth Recommendation for user 150, 870, 1595
+werkzeug - INFO - 2019-06-08 22:17:23,762 - 127.0.0.1 - - [08/Jun/2019 22:17:23] "GET /recommendations4 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - DEBUG - 2019-06-08 22:17:24,568 - Displaying Fifth Recommendation for user 150, 870, 1595
+werkzeug - INFO - 2019-06-08 22:17:24,588 - 127.0.0.1 - - [08/Jun/2019 22:17:24] "GET /recommendations5 HTTP/1.1" 200 -
+C:\Users\smler\Documents\Class Notes\AVC\book_recommendations\application.py - INFO - 2019-06-08 22:17:25,591 - At first page: choose_genre
+werkzeug - INFO - 2019-06-08 22:17:25,593 - 127.0.0.1 - - [08/Jun/2019 22:17:25] "GET / HTTP/1.1" 200 -
