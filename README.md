@@ -112,6 +112,14 @@ To add the data to this RDS database, run:
 
 `python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books' 
 
+To run the application:
+
+Open flask_config.py and make sure the lines under RDS Database are not commented out, and the lines under LOCAL sqllite database are commented out.
+
+Then run
+`python application.py'
+
+Open the IP address of your EC2 instance plus the port 3000, and you should be able to use the app!
 
 ### 3. If you instead want a local database, create a sqllite database:
  
@@ -125,4 +133,16 @@ To add data to the sqllite database, run:
 
 `python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books --SQL_URI=sqlite:///data/database.db'
 
+Open flask_config.py and make sure the lines under LOCAL sqllite database are not commented out, and comment out the RDS database lines.
 
+Then run
+`python application.py'
+
+You should be able to interact with the app at the website http://127.0.0.1:3000/
+
+
+Sources:
+
+Data Source: https://github.com/zygmuntz/goodbooks-10k
+
+Learning to use the Surprise Package: https://surprise.readthedocs.io/en/stable/FAQ.html
