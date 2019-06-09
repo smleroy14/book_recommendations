@@ -14,6 +14,7 @@ QA: Alicia Burris
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
   * [2. Run the App on AWS](#2-run-the-app-on-aws)
   * [3. Run the App Locally](#3-run-the-app-locally)
+- [Sources](#sources)
 
 
 <!-- tocstop -->
@@ -63,8 +64,8 @@ The second measurement of user performance will be user engagement. How often do
 ```
 This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
 
-## Running the application 
-### 1. Getting the predictions
+# Running the application 
+## 1. Getting the predictions
 
 The make file will set up a vitual environment with all the required packages for you. However, due to an issue with the surprise package, you will need to install numpy first separately. 
 
@@ -168,7 +169,7 @@ Open flask_config.py and make sure the lines under LOCAL sqllite database are no
 You should be able to interact with the app at the website http://127.0.0.1:3000/
 
 
-Sources:
+## Sources
 
 Data Source: https://github.com/zygmuntz/goodbooks-10k
 
