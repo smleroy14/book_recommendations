@@ -25,9 +25,7 @@ def intro_page():
     """Main view that lists genres for the user to choose from.
     Returns: rendered html template
     """
-
     logger.info('At first page: choose_genre')
-    logger.debug("Listing genres")
     return render_template('choose_genre.html')
 
 

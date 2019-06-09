@@ -26,7 +26,7 @@ APP_NAME = "book-rec"
 #LOCAL SQLLITE DATABASE
 #----------------------
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database.db?check_same_thread=False'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 HOST = "127.0.0.1"
 SQLALCHEMY_ECHO = False  # If true, SQL for queries made will be printed

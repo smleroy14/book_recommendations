@@ -152,6 +152,8 @@ To add data to the sqllite database, run:
 
 Open flask_config.py and make sure the lines under LOCAL sqllite database are not commented out, and comment out the RDS database lines.
 
+You must add ?check_same_thread=False to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False
+
 Then run
 `python application.py'
 
