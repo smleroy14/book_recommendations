@@ -10,11 +10,10 @@ QA: Alicia Burris
 - [Project Charter](#project-charter)
 - [Repo structure](#repo-structure)
 - [Running the application](#running-the-application)
-  * [1. Set up environment](#1-set-up-environment)
+  * [1. Getting the predictions](#1-getting-the-predictions)
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
-  * [2. Source data from public S3 bucket](#2-source-from-S3)
-  * [3. Create an RDS Database](#3-initialize-the-database)
-  * [4. Create a sqllite database](#4-run-the-application)
+  * [2. Run the App on AWS](#2-run-the-app-on-aws)
+  * [3. Run the App Locally](#3-run-the-app-locally)
 
 
 <!-- tocstop -->
@@ -92,7 +91,9 @@ make all
 
 **Note: To change inputs, outputs, or the config file in use, please edit the Makefile
 
-### 2. Create an RDS database:
+## 2. Run the app on AWS
+### Create an RDS database:
+
 Fill in the config/dbconfig file with the following: 
 
 MYSQL_USER=""
@@ -125,20 +126,24 @@ Finally, to create the RDS database with these configurations, run:
 `python src/create_db.py`
 
 To add the data to this RDS database, run:
-`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations'
 
-`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books' 
+`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations`
+
+`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books`
 
 To run the application:
 
 Open flask_config.py and make sure the lines under RDS Database are not commented out, and the lines under LOCAL sqllite database are commented out.
 
 Then run
-`python application.py'
+
+`python application.py`
 
 Open the IP address of your EC2 instance plus the port 3000, and you should be able to use the app!
 
-### 3. If you instead want a local database, create a sqllite database:
+## 3. Run the App Locally
+
+### If you instead want a local database, create a sqllite database:
  
  ```bash
  python src/create_db.py --SQL_URI=sqlite:///data/database.db
@@ -146,16 +151,17 @@ Open the IP address of your EC2 instance plus the port 3000, and you should be a
  
 To add data to the sqllite database, run: 
 
-`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations --SQL_URI=sqlite:///data/database.db'
+`python src/insert_db.py --config=config.yml --input=data/recs/all_recs.csv --table=Book_Recommendations --SQL_URI=sqlite:///data/database.db`
 
-`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books --SQL_URI=sqlite:///data/database.db'
+`python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books --SQL_URI=sqlite:///data/database.db`
 
 Open flask_config.py and make sure the lines under LOCAL sqllite database are not commented out, and comment out the RDS database lines.
 
-You must add ?check_same_thread=False to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False
+**You must add ?check_same_thread=False to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False**
 
 Then run
-`python application.py'
+
+`python application.py`
 
 You should be able to interact with the app at the website http://127.0.0.1:3000/
 
