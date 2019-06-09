@@ -66,7 +66,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 ## Running the application 
 ### 1. Getting the predictions
 
-The make file will set up a vitual environment for you. However, due to an issue with the surprise package, you will need to install numpy first separately. 
+The make file will set up a vitual environment with all the required packages for you. However, due to an issue with the surprise package, you will need to install numpy first separately. 
 
 Documented here: https://github.com/NicolasHug/Surprise/issues/188
 
@@ -80,8 +80,10 @@ Next, open the Makefile and change the bucket name on lines 8 and 11. 'michel-av
 Note: you will need to have an AWS bucket along with a key
 
 Next, make sure you have your aws configurations set up, so you can access the S3 bucket.
-For more information, see this link: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 
+This means you should have an aws access key id and an aws access secret key in the ~/.aws/credentials file.
+
+For more information, see this link: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 
 To get the predictions that will populate the database, run: 
 
@@ -89,7 +91,7 @@ To get the predictions that will populate the database, run:
 make all
 ```
 
-**Note: To change inputs, outputs, or the config file in use, please edit the Makefile
+**Note: To change inputs, outputs, or the config file in use, please edit the Makefile arguments
 
 ## 2. Run the app on AWS
 ### Create an RDS database:
@@ -131,7 +133,7 @@ To add the data to this RDS database, run:
 
 `python src/insert_db.py --config=config.yml --input=data/books_w_genres.csv --table=Top_Books`
 
-To run the application:
+### To run the application:
 
 Open flask_config.py and make sure the lines under RDS Database are not commented out, and the lines under LOCAL sqllite database are commented out.
 
@@ -159,7 +161,7 @@ Open flask_config.py and make sure the lines under LOCAL sqllite database are no
 
 **You must add ?check_same_thread=False to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False**
 
-Then run
+### To run the application:
 
 `python application.py`
 
