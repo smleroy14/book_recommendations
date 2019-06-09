@@ -65,13 +65,30 @@ The second measurement of user performance will be user engagement. How often do
 This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
 
 ## Running the application 
-### 1. To get the predictions that will populate the database, run: 
+### 1. Getting the predictions
+
+The make file will set up a vitual environment for you. However, due to an issue with the surprise package, you will need to install numpy first separately. 
+
+Documented here: https://github.com/NicolasHug/Surprise/issues/188
+
+Please run this first:
+
+```bash
+pip install numpy
+```
+
+Next, open the Makefile and change the bucket name on lines 8 and 11. 'michel-avc-project-private' should be the name of your own S3 bucket. 
+Note: you will need to have an AWS bucket along with a key
+
+Next, make sure you have your aws configurations set up, so you can access the S3 bucket.
+For more information, see this link: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+
+
+To get the predictions that will populate the database, run: 
 
 ```bash
 make all
 ```
-
-** Note: The user will need to have an AWS bucket along with a key
 
 **Note: To change inputs, outputs, or the config file in use, please edit the Makefile
 

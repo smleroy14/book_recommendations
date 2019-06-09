@@ -26,7 +26,7 @@ gen_features:
   get_genre_rating_dfs:
     ratings_csv: "data/raw_from_s3/ratings.csv"
 train_model:
-  genres: ["Chick-lit", "History"]
+  genres: ["Fiction", "Fantasy", "Young Adult", "Classics", "Mystery", "Biography", "Chick-lit", "History", "Historical Fiction", "Science Fiction", "Childrens"]
   get_combo_df:
     num_choices: 20
     num_picks: 3
@@ -38,7 +38,7 @@ train_model:
     n_start: 17
     n_end: 22
 score_model:
-  genres: ['Chick-lit', 'History']
+  genres: ["Fiction", "Fantasy", "Young Adult", "Classics", "Mystery", "Biography", "Chick-lit", "History", "Historical Fiction", "Science Fiction", "Childrens"]
   get_accuracy:
     neighbors: 30
     min_neighbors: 5
