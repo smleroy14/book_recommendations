@@ -1,7 +1,9 @@
 # Book It to the Library!
 ## A Book Recommendation App
-### Author: Michel LeRoy
-### QA: Alicia Burris
+
+**Author: Michel LeRoy**
+
+**QA: Alicia Burris**
 
 
 <!-- toc -->
