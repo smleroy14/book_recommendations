@@ -44,23 +44,56 @@ The second measurement of user performance will be user engagement. How often do
 
 ```
 ├── README.md                         <- You are here
-│
-├── config                            <- Directory for yaml configuration files for model training, scoring, etc
-|   dbconfig                          File for future users to edit with their RDS configurations
+├── application.py                    <- runs the flask app
+├── backlog.md                        <- markdown file to keep the backlog and icebox
+|
+├── config                            <- Directory for logging file and database configurations
+|   dbconfig                          File for future users to edit with their RDS or SQLlite configurations
 │   ├── logging/                      <- Configuration files for python loggers
-│
-├── data                              <- Folder that contains data used or generated. Only the external/ and sample/ subdirectories are tracked by git. 
-│
-├── deliverables                      <- slide deck for midproject review
 |
-├── notebooks                         <- Folder that contains notebooks used for EDA and model training that will be developed into scripts later
+├── config.yml                        <- yaml configuration file for training and scoring the model
+│
+├── data                              <- Folder that contains data used or generated.
+|   ├── raw_from_s3                   <- default folder for downloading raw data from public S3 bucket
+|   ├── raw_private_S3                <- default folder for downloading data from the private S3 bucket
+|   ├── recs                          <- default folder for storing the predicted user recommendations
+│
+├── deliverables                      <- slide deck for midproject review - powerpoint
 |
-├── src                               <- Source data for the project 
-│   ├── create_db.py                  <- Script for creating a (temporary) MySQL database and adding songs to it 
-|   ├── get_data.py                   <- Script for downloading raw kaggle files from a public S3 bucket
-|   ├── load_data_s3.py               <- Script for uploading raw data files to a user's own S3 bucket
+├── flask_config.py                   <- configuration file for the flask app
+├── Makefile                          <- Makefile to run getting the predictions for the app
+|
+├── notebooks                         <- Folder that contains notebooks used for EDA and model training 
 |
 ├── requirements.txt                  <- Python package dependencies 
+|
+├── src                               <- Source data for the project 
+│   ├── create_db.py                  <- Script for creating either a sqllite database or an RDS daatabase
+|   ├── gen_features.py               <- Script for generating the dataframe to be used by train_model.py
+|   ├── get_data.py                   <- Script for downloading raw kaggle files from a public S3 bucket
+|   ├── insert_db.py                  <- Script for adding data to either the sqllite db or the RDS db
+|   ├── load_data_s3.py               <- Script for uploading raw data files to a user's own S3 bucket
+|   ├── score_model.py                <- Script for getting the cross validated precision and recall for the model
+|   ├── train_model.py                <- Script to train the model and get the predictions
+|
+|
+├── static                            <- Files for the flask app
+|    ├── background-pic.jpg           <- background image for the web app
+|
+├── templates                         <- html templates for the web pages
+|   ├── choose_books.html             <- html template for the user to choose their favorite books
+|   ├── choose_genre.html             <- htmml template for the user to choose a genre
+|   ├── error-generic.html            <- html template for an unspecified error
+|   ├── error-nobook.html             <- html template for error if a user does not choose a book
+|   ├── error-nogenre.html            <- html template for error if a user does not choose a gen
+|   ├── error-samebooks.html          <- html template for error if a user chooses two or more books that are the same
+|   ├── recommendations1.html         <- html template that displays a user's first recommendation
+|   ├── recommendations2.html         <- html template that displays a user's second recommendation
+|   ├── recommendations3.html         <- html template that displays a user's third recommendation
+|   ├── recommendations4.html         <- html template that displays a user's fourth recommendation
+|   ├── recommendations5.html         <- html template that displays a user's fifth recommendation
+
+
 ```
 This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
 
@@ -144,6 +177,8 @@ Then run
 
 Open the IP address of your EC2 instance plus the port 3000, and you should be able to use the app!
 
+An example site is http://18.219.185.115:3000 (replace the 18.219.185.115 with your own EC2 instance IP address)
+
 ## 3. Run the App Locally
 
 ### If you instead want a local database, create a sqllite database:
@@ -160,7 +195,7 @@ To add data to the sqllite database, run:
 
 Open flask_config.py and make sure the lines under LOCAL sqllite database are not commented out, and comment out the RDS database lines.
 
-**You must add ?check_same_thread=False to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False**
+You must add **?check_same_thread=False** to the end of the SQL_URI. For example, this should be SQL_URI=sqlite:///data/database.db?check_same_thread=False
 
 ### To run the application:
 
