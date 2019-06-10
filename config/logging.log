@@ -1,0 +1,17 @@
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:30:17,291 -          user_id  book_id  rating
+0  150, 366, 374      150       5
+1  150, 366, 646      150       5
+2  150, 366, 663      150       5
+3  150, 366, 687      150       5
+4  150, 366, 762      150       5
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:30:17,306 - Ratings Distributions:
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:30:17,306 - {4: 16881, 5: 15933, 3: 9275, 2: 2247, 1: 810}
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:42:14,718 - Retrieving top predictions for each user
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:42:21,326 -          user_id  book_id  rating
+0  150, 366, 374      150       5
+1  150, 366, 646      150       5
+2  150, 366, 663      150       5
+3  150, 366, 687      150       5
+4  150, 366, 762      150       5
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:42:21,338 - Ratings Distributions:
+/nfs/home/sml6827/book_recommendations/src/train_model.py - INFO - 2019-06-10 03:42:21,338 - {4: 16881, 5: 15933, 3: 9275, 2: 2247, 1: 810}

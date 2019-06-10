@@ -6,16 +6,32 @@ from botocore.exceptions import ClientError
 import argparse
 
 # set up logging config
-logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
+logging.basicConfig(filename='config/logging.log', filemode='w', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
 logger = logging.getLogger(__file__)
 
 def download_from_S3(bucket_name, save_path, s3_file_names, local_file_names):
-    #download raw Kaggle data files from Public S3 bucket
+    """ Downloads raw data files from an S3 bucket
+
+    Args:
+        bucket_name (str): the name of the S3 bucket
+        save_path (str): the directory to save the downloaded files in
+        s3_file_names (list): the names of the files in the S3 bucket
+        local_file_names (list): the names of the files saved locally
+    Returns:
+        local_file_names: the files will be saved to the specified local path
+    """
+
     for i in range(len(local_file_names)):
         s3_file = s3_file_names[i]
         local_file = save_path + local_file_names[i]
-        s3 = boto3.client('s3')
-        s3.download_file(bucket_name, s3_file, local_file)
+        try:
+            s3 = boto3.client('s3')
+            s3.download_file(bucket_name, s3_file, local_file)
+            logger.info("Data was downloaded from %s", bucket_name)
+            logger.info("Data was saved to %s", save_path)
+        except botocore.exceptions.NoCredentialsError as e:
+            logger.error("Invalid S3 credentials")
+            sys.exit(1)
    
 def run_get_data(args):
 

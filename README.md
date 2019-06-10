@@ -15,6 +15,7 @@
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
   * [2. Run the App on AWS](#2-run-the-app-on-aws)
   * [3. Run the App Locally](#3-run-the-app-locally)
+  * [4. Testing the App](#4-testing)
 - [Sources](#sources)
 
 
@@ -126,7 +127,9 @@ To get the predictions that will populate the database, run:
 make all
 ```
 
-**Note: To change inputs, outputs, or the config file in use, please edit the Makefile arguments
+**Note: To change the file paths inputs and outputs, or the config file in use, please edit the Makefile arguments
+        You may also edit config.yml to change any other arguments you wish
+
 
 ## 2. Run the app on AWS
 ### Create an RDS database:
@@ -204,6 +207,11 @@ You must add **?check_same_thread=False** to the end of the SQL_URI. For example
 
 You should be able to interact with the app at the website http://127.0.0.1:3000/
 
+## 4. Testing
+
+To test the app, run:
+
+`pytest src/test_app.py`
 
 ## Sources
 

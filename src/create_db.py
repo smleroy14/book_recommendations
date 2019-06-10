@@ -67,8 +67,10 @@ def create_db(SQL_URI=None):
     
     if SQL_URI is not None:
         engine_string = SQL_URI
+        logger.info(engine_string)
         engine = sql.create_engine(engine_string) 
         Base.metadata.create_all(engine)
+        logger.info("Local sqllite database created")
     
     else:
         #get configurations from .mysqlconfig
@@ -83,9 +85,10 @@ def create_db(SQL_URI=None):
         #engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
         engine_string = "{}://{}:{}@{}:{}/{}".\
         format(conn_type, user, password, host, port, DATABASE_NAME)
-        print(engine_string)
+        logger.info(engine_string)
         engine = sql.create_engine(engine_string)
         Base.metadata.create_all(engine)
+        logger.info("RDS database created")
 
 
 if __name__ == "__main__":

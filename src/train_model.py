@@ -23,10 +23,18 @@ logger = logging.getLogger(__file__)
 
 def get_combo_df(df, genre, num_choices, num_picks):
     """ Iterates through the top 20 books of a genre and
-    gets all combinations of choosing 3 of these
-    
-    Returns a dataframe of "users" with 5 ratings for the 
-    books they chose
+    gets all combinations of choosing 3 of these. Creates 'ratings' by treating each book chosen 
+   as a rating of 5, and each 'user_id' will be a string of the book ids they chose.
+
+    Args:
+        df (pandas.Dataframe): A dataframe of the books, genres, and ratings
+        genre (str): The genre for which you want the top books
+        num_choices (int): The number of top books a user will choose from
+        num_picks (int): The number of books a user will pick from the top books
+    Returns:
+        combo_ratings (pandas.Dataframe): A dataframe with the book choices for all the possible combinations a user could input on the app
+        data (pandas.Dataframe): A dataframe with all the actual ratings and books for a genre for the model
+        num_combos (int): the number of possible new combinations based on num_choices and num_picks 
     """
 
     data = df[df['genre']==genre]
@@ -64,29 +72,44 @@ def get_combo_df(df, genre, num_choices, num_picks):
     return combo_ratings, data, num_combos
 
 def train_model(new_users, data, neighbors = 30, min_neighbors = 5, seed = 12345):
-	
-	#ensure a nice distribution of ratings
-	ratings_counts = data['rating'].value_counts().to_dict()
-	logger.info(ratings_counts)
+    """ Trains the KNN Basic model using the surprise package using
+    the existing ratings data combined with all the new user possible combinations
 
-	#combine actual ratings with all possible ratings users could input
-	full_data = new_users.append(data)
+    Args:
+        new_users (pandas.Dataframe): The dataframe with the 'ratings' of all the possible combinations of user input
+        data (pandas.Dataframe): The existing ratings dataframe 
+        neighbors (int): the number of nearest neighbors to train the model on, default is 30
+        min_neighbors (int): the minimum number of neighbors a user must have to receive a prediction. 
+                            If there are not enough neighbors, the prediction is set the the global mean of all ratings
+                            default is 5.
+        seed (int): setting the random state, default is 122345
+    Returns:
+        predictions (list of prediction objects):  The predicted recommendations from the model
+    """
 	
-	#use surprise Reader function to read in data in surprise format
-	reader = Reader(rating_scale=(1, 5))
-	data = Dataset.load_from_df(full_data[['user_id', 'book_id', 'rating']], reader)
+    #ensure a nice distribution of ratings
+    ratings_counts = data['rating'].value_counts().to_dict()
+    logger.info("Ratings Distributions:")
+    logger.info(ratings_counts)
+
+    #combine actual ratings with all possible ratings users could input
+    full_data = new_users.append(data)
 	
-	trainset = data.build_full_trainset()
-	algo = KNNBasic(k=neighbors, min_k=min_neighbors, random_state=seed)
-	algo.fit(trainset)
+    #use surprise Reader function to read in data in surprise format
+    reader = Reader(rating_scale=(1, 5))
+    data = Dataset.load_from_df(full_data[['user_id', 'book_id', 'rating']], reader)
+	
+    trainset = data.build_full_trainset()
+    algo = KNNBasic(k=neighbors, min_k=min_neighbors, random_state=seed)
+    algo.fit(trainset)
         
-	# predict all the cells without values
-	testset = trainset.build_anti_testset()
-	predictions = algo.test(testset)
-	return predictions
+    # predict all the cells without values
+    testset = trainset.build_anti_testset()
+    predictions = algo.test(testset)
+    return predictions
 
 def get_top_n(predictions, n_start = 17, n_end = 22):
-    '''Return the top-N recommendation for each user from a set of predictions.
+    """Return the top-N recommendation for each user from a set of predictions.
 
     Args:
         predictions(list of Prediction objects): The list of predictions, as
@@ -97,9 +120,9 @@ def get_top_n(predictions, n_start = 17, n_end = 22):
 		(will return five recommendations)
 
     Returns:
-    A dict where keys are user (raw) ids and values are lists of tuples:
+        top_n (dictionary): A dict where keys are user (raw) ids and values are lists of tuples:
         [(raw item id, rating estimation), ...] of size n.
-    '''
+    """
 
     # First map the predictions to each user.
     top_n = defaultdict(list)
@@ -110,14 +133,25 @@ def get_top_n(predictions, n_start = 17, n_end = 22):
     for uid, user_ratings in top_n.items():
         user_ratings.sort(key=lambda x: x[1], reverse=True)
         top_n[uid] = user_ratings[n_start:n_end]
-
+    logger.info("Retrieving top predictions for each user")
     return top_n
 
 def take(n, iterable):
-    "Return first n items of the iterable as a list"
+    """Helper function to return first n items of the iterable as a list"""
     return list(islice(iterable, n))
 
 def get_recs(top_n, num_combos):
+    """ Iterates through the dictionary of predictions and saves a 
+    dataframe of recommendations for all the possible user inputs
+
+    Args:
+        top_n (dictionary): A dictionary where keys are user (raw) ids and values are lists of tuples:
+                           [(raw item id, rating estimation), ...] of size n.
+        num_combos (int): The number of possible user combinations
+    Returns:
+        recs (pandas.Dataframe): A dataframe with 5 recommendations for each possible new user
+    """
+
     n_items = take(num_combos, top_n.items())
     preds = []
     for uid, user_ratings in n_items:
@@ -128,10 +162,11 @@ def get_recs(top_n, num_combos):
         .merge(preds_df, right_index = True, left_index = True) \
         .drop(["recommendations"], axis = 1)
     recs.columns = ['book1', 'book2', 'book3', 'book4', 'book5', 'user'] 
+    logger.info("Predictions retrieved")
     return recs
 
 def run_train_model(args):
-    """Orchestrates getting the data from config file arguments."""
+    """Orchestrates training the model from config file arguments."""
 
     with open(args.config, "r") as f:
         config = yaml.load(f)
@@ -158,7 +193,7 @@ def run_train_model(args):
         recs['genre'] = genre
         all_recs = all_recs.append(recs, ignore_index = True)
     all_recs.to_csv(path)
-    
+    logger.info("Recommendations saved to %s", path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict books for new users")

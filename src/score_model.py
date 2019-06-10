@@ -19,7 +19,7 @@ import argparse
 logging.basicConfig(filename='config/logging.log', filemode='a', level=logging.DEBUG, format='%(name)s - %(levelname)s - %(asctime)s - %(message)s')
 logger = logging.getLogger(__file__)
 
-def precision_recall_at_k(predictions, k=10, threshold=3):
+def precision_recall_at_k(predictions, k=5, threshold=4):
     '''Return precision and recall at k metrics for each user.'''
 
     # First map the predictions to each user.
@@ -52,7 +52,25 @@ def precision_recall_at_k(predictions, k=10, threshold=3):
 
     return precisions, recalls
 
-def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfolds = 5):
+def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfolds = 5, k=5, threshold=4):
+        """ Gets the precision and accuracy of the model for each genre using cross validation
+        
+        Args:
+            df (pandas.DataFrame): the dataset of actual ratings
+            genre (str): the genre for the model
+            neighbors (int): the number of neighbors to take into account when training the model
+                             Default is 30.
+            min_neighbors (int): the number of neighbors a user must have in order to get a prediction.
+                                Default is 5.
+            seed (int): setting the random state. Default is 12345.
+            kfolds (int): the number of folds for cross validation. Default is 5.
+            k (int): number of recommendations for each user. default is 5.
+            threshold (int): the cutoff rating at which an item will be considered 'enjoyed.'
+        Returns:
+            prec (int): The average of precision across the kfolds cross validation
+            rec (int): The average of recall across the kfolds cross validation
+ 	"""
+         
         data = df[df['genre']==genre]
         data = data[['user_id','book_id','rating']]
         reader = Reader(rating_scale=(1, 5))
@@ -65,7 +83,7 @@ def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfo
         for trainset, testset in kf.split(data):
             algo_KNNbasic.fit(trainset)
             predictions = algo_KNNbasic.test(testset)
-            precisions, recalls = precision_recall_at_k(predictions, k=5, threshold=4)
+            precisions, recalls = precision_recall_at_k(predictions, k=k, threshold=threshold)
 
 	    # Precision and recall can then be averaged over all users
             logger.info("Precision:")
@@ -79,14 +97,11 @@ def get_accuracy(df, genre, neighbors = 30, min_neighbors = 5, seed = 12345, kfo
 
         prec = (sum(prec_list) / len(prec_list))
         rec = (sum(recalls_list) / len(recalls_list))
+        return prec, rec
  
-        text_file = open(args.output, "a")
-        text_file.write("Genre: %s\r\n" % genre)
-        text_file.write("Precision: %s\r\n" % prec)
-        text_file.write("Recall: %s\r\n" % rec)
         
 def run_score_model(args):
-    """Orchestrates getting the data from config file arguments."""
+    """ Orchestrates scoring the model from the config file arguments"""
 
     with open(args.config, "r") as f:
         config = yaml.load(f)
@@ -104,8 +119,13 @@ def run_score_model(args):
   
     for genre in genres:
         logger.info("calculating precision and recall for %s", genre)
-        get_accuracy(df, genre, **config_try['get_accuracy'])
-    text_file.close()   
+        prec, rec = get_accuracy(df, genre, **config_try['get_accuracy'])
+        text_file = open(args.output, "a")
+        text_file.write("Genre: %s\r\n" % genre)
+        text_file.write("Precision: %s\r\n" % prec)
+        text_file.write("Recall: %s\r\n" % rec)
+    text_file.close()
+    logger.info("Model accuracy saved at %s", args.output)   
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Score the models")

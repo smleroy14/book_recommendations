@@ -49,6 +49,7 @@ def get_top_books(df, num_choices, books_csv):
     top_books = pd.merge(top_books, books, how='left', on='book_id')
     top_books = top_books[['book_id','genre', 'authors', 'title']]
     top_books.columns = ['book_id', 'genre', 'author', 'title']
+    logger.info(top_books.head())
     return top_books
 
 
@@ -59,6 +60,7 @@ def add_data(df, table_name, SQL_URI=None):
         engine_string = SQL_URI
         engine = sql.create_engine(engine_string)
         df.to_sql(name=table_name, con=engine, if_exists='replace', index=True)
+        logger.info("Data inserted into %s", table_name)
 	    
     #If False, add df to RDS database
     else:
@@ -77,6 +79,7 @@ def add_data(df, table_name, SQL_URI=None):
         print(engine_string)
         engine = sql.create_engine(engine_string)
         df.to_sql(table_name, engine, if_exists='replace', index=False)
+        logger.info("Data inserted into %s", table_name)
                 
 
 def run_insert_db(args):
@@ -91,14 +94,17 @@ def run_insert_db(args):
         raise ValueError("Path to CSV for input data must be provided through --input")
 
     if args.table == "Book_Recommendations":
-    	recs_for_db = read_recs(df, **config_try['read_recs'])
-    	print(recs_for_db.head())
-    	add_data(recs_for_db, 'Book_Recommendations', args.SQL_URI)
+        recs_for_db = read_recs(df, **config_try['read_recs'])
+        logger.info("recs added to Book_Recommendations table")
+        logger.info(recs_for_db.head())
+        add_data(recs_for_db, 'Book_Recommendations', args.SQL_URI)
     elif args.table == "Top_Books":
         top_books = get_top_books(df, **config_try['get_top_books'])
         add_data(top_books, 'Top_Books', args.SQL_URI)
+        logger.info("top books added to Top_Books table")
+        logger.info(top_books.head())
     else:
-        raise ValueError("That is not a valid table name")    
+        raise ValueError("%s is not a valid table name", args.table)    
 
 
 if __name__ == "__main__":
