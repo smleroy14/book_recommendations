@@ -1,8 +1,6 @@
 # Book Recommendation App project repository
-# For Mid-Project Review
-
-Author: Michel LeRoy
-QA: Alicia Burris
+### Author: Michel LeRoy
+### QA: Alicia Burris
 
 
 <!-- toc -->
