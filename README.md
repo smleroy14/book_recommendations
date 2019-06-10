@@ -76,6 +76,7 @@ The second measurement of user performance will be user engagement. How often do
 |   ├── insert_db.py                  <- Script for adding data to either the sqllite db or the RDS db
 |   ├── load_data_s3.py               <- Script for uploading raw data files to a user's own S3 bucket
 |   ├── score_model.py                <- Script for getting the cross validated precision and recall for the model
+|   ├── test_app.py                   <- Script for performing unit tests on functions
 |   ├── train_model.py                <- Script to train the model and get the predictions
 |
 |
