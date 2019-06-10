@@ -1,4 +1,5 @@
-# Book Recommendation App project repository
+# Book It to the Library!
+## A Book Recommendation App
 ### Author: Michel LeRoy
 ### QA: Alicia Burris
 
