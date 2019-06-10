@@ -22,7 +22,7 @@ gen_features:
   get_genres:
     genre_dict: { 'Fiction' : ['fiction', 'adult-fiction', 'general-fiction'] , 'Fantasy' : ['fantasy', 'magic'], 'Young Adult': ['young-adult', 'ya', 'teen'], 'Classics' : ['classics', 'literature'], 'Romance': ['romance'], 'Mystery': ['mystery', 'thriller', 'crime', 'suspense'], 'Non-Fiction': ['non-fiction', 'nonfiction'], 'Biography': ['memoir', 'biography'], 'History': ['historical', 'history'], 'Historical Fiction' : ['historical-fiction'], 'Science Fiction': ['sci-fi', 'sci-fi-fantasy'], 'Childrens' : ['childrens', 'children-s', 'kids', 'children-s-books'], 'Graphic Novel': ['graphic-novels', 'comics', 'graphic-novel'], 'Adventure': ['adventure'], 'Dystopian': ['dystopian', 'dystopia'], 'Chick-lit': ['chick-lit'], 'Humor' : ['humor']}
   drop_genre: 
-    genres_to_drop: ['Adventure', 'Romance', 'Humor']
+    genres_to_drop: ['Adventure', 'Humor']
   get_genre_rating_dfs:
     ratings_csv: "data/raw_from_s3/ratings.csv"
 train_model:
