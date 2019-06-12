@@ -219,3 +219,5 @@ To test the app, run:
 Data Source: https://github.com/zygmuntz/goodbooks-10k
 
 Learning to use the Surprise Package: https://surprise.readthedocs.io/en/stable/FAQ.html
+
+Example Project: https://github.com/MSIA/MSiA423-example-project-repo-2019
