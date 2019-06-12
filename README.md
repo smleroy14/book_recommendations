@@ -60,7 +60,7 @@ The second measurement of user performance will be user engagement. How often do
 |   ├── raw_private_S3                <- default folder for downloading data from the private S3 bucket
 |   ├── recs                          <- default folder for storing the predicted user recommendations
 │
-├── deliverables                      <- slide deck for midproject review - powerpoint
+├── deliverables                      <- slide decks for midproject review and the final presentation
 |
 ├── flask_config.py                   <- configuration file for the flask app
 ├── Makefile                          <- Makefile to run getting the predictions for the app
