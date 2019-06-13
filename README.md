@@ -110,7 +110,7 @@ Documented here: https://github.com/NicolasHug/Surprise/issues/188
 Please run this first:
 
 ```bash
-pip install numpy
+pip install numpy==1.15.4
 ```
 
 Next, open the Makefile and change the bucket name on lines 8 and 11. 'michel-avc-project-private' should be the name of your own S3 bucket. 
@@ -186,8 +186,17 @@ An example site is http://18.219.185.115:3000 (replace the 18.219.185.115 with y
 
 ## 3. Run the App Locally
 
-### If you instead want a local database, create a sqllite database:
+### If you instead want a local database:
  
+First run 
+```bash
+source book-env/bin/activate
+```
+
+to use the virtual environment created in the Makefile.
+
+Next, to create the sqllite database:
+
  ```bash
  python src/create_db.py --SQL_URI=sqlite:///data/database.db
  ```

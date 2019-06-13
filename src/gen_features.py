@@ -22,9 +22,13 @@ def get_books_df(csv_dict):
     '''
 
     #read in csv files
-    data_dict =  {}
-    for key, value in csv_dict.items():
-        data_dict[key] = pd.read_csv(value)    
+    try:
+        data_dict =  {}
+        for key, value in csv_dict.items():
+            data_dict[key] = pd.read_csv(value)
+    except:
+        raise FileNotFoundError('Incorrect File Path in the csv dictionary') 
+        logger.error('csv dict includes an incorrect file path')    
 
     #merge book titles and ids to the book tags dataframe, then merge in tag names
     book_names = data_dict['books']
